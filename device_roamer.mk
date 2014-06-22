@@ -1,9 +1,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/cyanogen/products/gsm.mk)
-
 # Inherit some common CM stuff.
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
