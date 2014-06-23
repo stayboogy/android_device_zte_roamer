@@ -11,14 +11,14 @@ PRODUCT_AAPT_CONFIG += normal mdpi
 PRODUCT_AAPT_PREF_CONFIG += mdpi
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.allow.mock.location=1 \
-    ro.debuggable=1
+	ro.secure=0 \
+	ro.allow.mock.location=1 \
+	ro.debuggable=1
 
 LOCAL_KERNEL := device/zte/roamer/kernel
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+	$(LOCAL_KERNEL):kernel
 
 # ramdisk
 PRODUCT_COPY_FILES += \
@@ -118,37 +118,37 @@ device/zte/roamer/etc/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg
 
 # live wallpapers
 PRODUCT_PACKAGES := \
-     LiveWallpapers \
-     LiveWallpapersPicker \
-     MagicSmokeWallpapers \
-     VisualizationWallpapers \
-     librs_jni
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	MagicSmokeWallpapers \
+	VisualizationWallpapers \
+	librs_jni
 
 PRODUCT_COPY_FILES += \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # libs
 PRODUCT_PACKAGES += \
 	libreference-ril \
-    libstagefrighthw \
-    hwcomposer.msm7k \
-    gps.msm7k \
-    audio.primary.msm7k \
-    audio_policy.msm7k \
-    audio.a2dp.default \
-    FM \
-    lights.roamer \
-    gralloc.roamer \
-    copybit.roamer
+	libstagefrighthw \
+	hwcomposer.msm7k \
+	gps.msm7k \
+	audio.primary.msm7k \
+	audio_policy.msm7k \
+	audio.a2dp.default \
+	FM \
+	lights.roamer \
+	gralloc.roamer \
+	copybit.roamer
 
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
-    libOmxCore \
-    libOmxVenc \
-    libOmxVdec
+	libmm-omxcore \
+	libOmxCore \
+	libOmxVenc \
+	libOmxVdec
 
 PRODUCT_PACKAGES += \
-    libaudioutils \
-    brcm_patchram_plus
+	libaudioutils \
+	brcm_patchram_plus
 
 $(call inherit-product-if-exists, vendor/zte/roamer/roamer-vendor.mk)
