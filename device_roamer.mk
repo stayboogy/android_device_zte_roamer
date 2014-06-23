@@ -31,6 +31,10 @@ device/zte/roamer/root/my.ueventd.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/usbconfig:root/sbin/usbconfig \
 device/zte/roamer/root/usb.conf:root/usb.conf
 
+# sim toolkit (instead of using gsm.mk)
+PRODUCT_PACKAGES += \
+	Stk
+
 # gapps
 PRODUCT_COPY_FILES += \
 device/zte/roamer/apps/GappsManager_1.1.apk:system/app/GappsManager.apk
