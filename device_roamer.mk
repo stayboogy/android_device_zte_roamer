@@ -23,7 +23,7 @@ PRODUCT_COPY_FILES += \
 # ramdisk
 PRODUCT_COPY_FILES += \
 device/zte/roamer/root/init.roamer.rc:root/init.roamer.rc \
-device/zte/roamer/root/my.ueventd.rc:root/ueventd.roamer.rc \
+device/zte/roamer/root/new.ueventd.rc:root/ueventd.rc \
 device/zte/roamer/root/usbconfig:root/sbin/usbconfig \
 device/zte/roamer/root/usb.conf:root/usb.conf
 
