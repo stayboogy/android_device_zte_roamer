@@ -54,7 +54,6 @@ PRODUCT_COPY_FILES  += \
 device/zte/roamer/bluetooth/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
 device/zte/roamer/bluetooth/hci_qcomm_init:system/bin/hci_qcomm_init \
 device/zte/roamer/bluetooth/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd
-#device/zte/roamer/bluetooth/init.bt.sh:system/etc/init.bt.sh \
 
 # wifi
 PRODUCT_COPY_FILES  += \
@@ -120,7 +119,7 @@ frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handh
 frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
 # omxcore
-PRODUCT_PACKAGES := \
+PRODUCT_COPY_FILES += \
 device/zte/roamer/etc/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg
 
 # live wallpapers
