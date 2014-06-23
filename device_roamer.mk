@@ -137,6 +137,7 @@ PRODUCT_COPY_FILES += \
 
 # libs
 PRODUCT_PACKAGES += \
+	libreference-ril \
     libstagefrighthw \
     hwcomposer.msm7k \
     gps.msm7k \
