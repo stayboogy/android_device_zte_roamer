@@ -99,12 +99,6 @@ service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init se
     disabled
     oneshot
 
-#service hciattach /system/bin/sh /system/etc/init.bt.sh
-#    user bluetooth
-#    group qcom_oncrpc bluetooth net_bt_admin system
-#    disabled
-#    oneshot
-
 service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 \
 --patchram /system/bin/BCM2070B0_002.001.032.0518.0520.hcd /dev/ttyHS0
 user bluetooth
