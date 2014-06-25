@@ -6,8 +6,8 @@ TARGET_CPU_ABI := armeabi
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_BOARD_PLATFORM_GPU := qcom
 
-# for using stock kernel
-#TARGET_USES_2G_VM_SPLIT := true
+# for using stock kernel vmsplit configuration (for stability)
+TARGET_USES_2G_VM_SPLIT := true
 
 BOARD_EGL_CFG := device/zte/roamer/etc/egl.cfg
 
