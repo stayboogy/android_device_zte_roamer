@@ -86,6 +86,10 @@ on boot
 service usbconfig /sbin/usbconfig
     oneshot
 
+service akmd /system/bin/akmd8962
+    user root
+    oneshot
+
 on property:init.svc.bluetoothd=running
     write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
     start abtfilt
@@ -140,13 +144,6 @@ service ckpd /system/bin/CKPD-daemon
 service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
 
 service qmuxd /system/bin/qmuxd
-
-service akmd /system/bin/akmd2
-    oneshot
-
-service akmd /system/bin/akmd8962
-    user root
-    oneshot
 
 service proximity_init /system/bin/proximity.init -r
     disabled
