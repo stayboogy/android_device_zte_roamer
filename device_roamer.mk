@@ -27,10 +27,6 @@ device/zte/roamer/root/roamer.ueventd.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/usbconfig:root/sbin/usbconfig \
 device/zte/roamer/root/usb.conf:root/usb.conf
 
-# gapps
-PRODUCT_COPY_FILES += \
-device/zte/roamer/apps/GappsManager_1.1.apk:system/app/GappsManager.apk
-
 # misc
 PRODUCT_COPY_FILES += \
 device/zte/roamer/misc/port-bridge:system/bin/port-bridge \
