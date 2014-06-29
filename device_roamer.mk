@@ -127,11 +127,6 @@ packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/pe
 PRODUCT_PACKAGES += \
 	libreference-ril \
 	libstagefrighthw \
-	hwcomposer.msm7k \
-	gps.msm7k \
-	audio.primary.msm7k \
-	audio_policy.msm7k \
-	audio.a2dp.default \
 	FM \
 	lights.roamer \
 	gralloc.roamer \
