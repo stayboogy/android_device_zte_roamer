@@ -1273,6 +1273,7 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
         // call
         // Recording will happen through currently active tx device
         if(inputDevice == AudioSystem::DEVICE_IN_VOICE_CALL){
+        mBuiltinMicSelected = (inputDevice == AudioSystem::DEVICE_IN_BUILTIN_MIC);
             return NO_ERROR;
         if (inputDevice != 0) {
             if (inputDevice & AudioSystem::DEVICE_IN_BLUETOOTH_SCO_HEADSET) {
@@ -1293,7 +1294,7 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
             }
         }
     }
-
+    }
     // if inputDevice == 0, restore output routing
     if (new_snd_device == -1) {
         if (outputDevices & (outputDevices - 1)) {
