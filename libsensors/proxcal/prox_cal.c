@@ -23,7 +23,7 @@ void fail(){
 
 void writeCfg(struct PS_ALS_cfg *cfg){
     FILE *file;
-    file = fopen("/data/misc/prox_data.txt","w");
+    file = fopen("/data/misc/prox/prox_data.txt","w");
     if(file==NULL) fail();
     else{
         fprintf(file,"%u,",cfg->prox_threshold_hi);
@@ -40,9 +40,9 @@ void writeCfg(struct PS_ALS_cfg *cfg){
 }
 
 void help(){
-    printf("ZTE Skate Taos/ISL proximity sensor calibration program\n");
-    printf("CyanogenMod Project\n");
+    printf("ZTE Roamer Taos/ISL proximity sensor calibration program\n");
     printf("Author: Tom Giordano and Lalit Maganti\n\n");
+    printf("adapted by stayboogy@github\n\n");
     printf("-c : Calibrate proximity sensor and write data to file\n");
     printf("-d : Display current proximity calibration data\n\n");
 }

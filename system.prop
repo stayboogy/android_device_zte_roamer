@@ -17,14 +17,8 @@ debug.composition.type=mdp
 dev.pm.dyn_samplingrate=1
 
 ro.sf.lcd_density=160
-ro.sf.hwrotation=0
+#ro.sf.hwrotation=0
 
 # Low Power Audio
 lpa.decode=false
 lpa.use-stagefright=false
-
-# Set default USB interface
-persist.sys.usb.config=mass_storage
-
-# Enable debug mode by default
-persist.service.adb.enable=1

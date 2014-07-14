@@ -28,11 +28,11 @@
 
 #include <cutils/log.h>
 
-#include "SkateProximity.h"
+#include "RoamerProximity.h"
 
 /*****************************************************************************/
 
-SkateProximity::SkateProximity(char *dev)
+RoamerProximity::RoamerProximity(char *dev)
     : SensorBase(dev, "proximity"),
       mEnabled(0),
       mInputReader(4),
@@ -58,13 +58,13 @@ SkateProximity::SkateProximity(char *dev)
     }
 }
 
-SkateProximity::~SkateProximity() {
+RoamerProximity::~RoamerProximity() {
     if (mEnabled) {
         enable(ID_P,0);
     }
 }
 
-int SkateProximity::initialise() {
+int RoamerProximity::initialise() {
     struct PS_ALS_cfg cfg;
     FILE * cFile;
     int array[20];
@@ -106,7 +106,7 @@ int SkateProximity::initialise() {
     return 1;
 }
 
-int SkateProximity::setInitialState() {
+int RoamerProximity::setInitialState() {
     struct input_absinfo absinfo;
     if (!ioctl(data_fd, EVIOCGABS(EVENT_TYPE_PROXIMITY), &absinfo)) {
         mPendingEvents.distance = indexToValue(absinfo.value);
@@ -114,7 +114,7 @@ int SkateProximity::setInitialState() {
     return 0;
 }
 
-int SkateProximity::enable(int32_t handle, int en) {
+int RoamerProximity::enable(int32_t handle, int en) {
     if (handle != ID_P)
         return -EINVAL;
 
@@ -153,11 +153,11 @@ int SkateProximity::enable(int32_t handle, int en) {
     return err;
 }
 
-bool SkateProximity::hasPendingEvents() const {
+bool RoamerProximity::hasPendingEvents() const {
      return mPendingMask;
 }
 
-int SkateProximity::readEvents(sensors_event_t* data, int count)
+int RoamerProximity::readEvents(sensors_event_t* data, int count)
 {
     if (count < 1)
         return -EINVAL;
@@ -185,14 +185,14 @@ int SkateProximity::readEvents(sensors_event_t* data, int count)
                 numEventReceived++;
             }
         } else {
-            LOGE("SkateSensor: unknown event (type=%d, code=%d)",type, event->code);
+            LOGE("RoamerSensor: unknown event (type=%d, code=%d)",type, event->code);
         }
         mInputReader.next();
     }
     return numEventReceived;
 }
 
-float SkateProximity::indexToValue(size_t index) const
+float RoamerProximity::indexToValue(size_t index) const
 {
     return index;
 }

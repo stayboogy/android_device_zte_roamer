@@ -47,13 +47,11 @@ static const struct sensor_t sTaosSensorList[] = {
         { "Taos Proximity sensor",
                 "Taos Inc.",
                 1, SENSORS_HANDLE_BASE+ID_P,
-                SENSOR_TYPE_PROXIMITY,
-                5.0f, 5.0f,
-                0.5f, 0, { } },
+                SENSOR_TYPE_PROXIMITY, 5.0f, 5.0f, 0.75f, 0, { } },
         { "Taos Light sensor",
                 "Taos Inc.",
                 1, SENSORS_HANDLE_BASE+ID_L,
-                SENSOR_TYPE_LIGHT, 27000.0f, 1.0f, 0.5f, 0, { } },
+                SENSOR_TYPE_LIGHT, 27000.0f, 1.0f, 0.75f, 0, { } },
 };
 
 static const struct sensor_t sISLSensorList[] = {
@@ -72,13 +70,11 @@ static const struct sensor_t sISLSensorList[] = {
         { "ISL29026 Proximity sensor",
                 "Intersil",
                 1, SENSORS_HANDLE_BASE+ID_P,
-                SENSOR_TYPE_PROXIMITY,
-                5.0f, 5.0f,
-                0.5f, 0, { } },
+                SENSOR_TYPE_PROXIMITY, 5.0f, 5.0f, 0.75f, 0, { } },
         { "ISL29026 Light sensor",
                 "Intersil",
                 1, SENSORS_HANDLE_BASE+ID_L,
-                SENSOR_TYPE_LIGHT, 27000.0f, 1.0f, 0.5f, 0, { } },
+                SENSOR_TYPE_LIGHT, 27000.0f, 1.0f, 0.75f, 0, { } },
 };
 
 static int open_sensors(const struct hw_module_t* module, const char* name,

@@ -32,8 +32,8 @@ LOCAL_SRC_FILES :=                                              \
                                 nusensors.cpp                   \
                                 InputEventReader.cpp            \
                                 SensorBase.cpp                  \
-                                SkateProximity.cpp              \
-                                SkateLight.cpp                  \
+                                RoamerProximity.cpp              \
+                                RoamerLight.cpp                  \
                                 AkmSensor.cpp
 
 LOCAL_SHARED_LIBRARIES := liblog libcutils

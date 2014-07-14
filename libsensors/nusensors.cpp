@@ -29,8 +29,8 @@
 #include <cutils/log.h>
 
 #include "nusensors.h"
-#include "SkateProximity.h"
-#include "SkateLight.h"
+#include "RoamerProximity.h"
+#include "RoamerLight.h"
 #include "AkmSensor.h"
 /*****************************************************************************/
 
@@ -80,23 +80,23 @@ sensors_poll_context_t::sensors_poll_context_t()
 {
     if(fopen(TAOS_DEVICE_NAME,"rw")) {
         LOGD("Using taos prox/light sensor");
-        mSensors[prox] = new SkateProximity(const_cast<char *>(TAOS_DEVICE_NAME));
+        mSensors[prox] = new RoamerProximity(const_cast<char *>(TAOS_DEVICE_NAME));
         mPollFds[prox].fd = mSensors[prox]->getFd();
         mPollFds[prox].events = POLLIN;
         mPollFds[prox].revents = 0;
 
-        mSensors[light] = new SkateLight(const_cast<char *>(TAOS_DEVICE_NAME));
+        mSensors[light] = new RoamerLight(const_cast<char *>(TAOS_DEVICE_NAME));
         mPollFds[light].fd = mSensors[light]->getFd();
         mPollFds[light].events = POLLIN;
         mPollFds[light].revents = 0;
     } else {
         LOGD("Using ISL prox/light sensor");
-        mSensors[prox] = new SkateProximity(const_cast<char *>(ISL_DEVICE_NAME));
+        mSensors[prox] = new RoamerProximity(const_cast<char *>(ISL_DEVICE_NAME));
         mPollFds[prox].fd = mSensors[prox]->getFd();
         mPollFds[prox].events = POLLIN;
         mPollFds[prox].revents = 0;
 
-        mSensors[light] = new SkateLight(const_cast<char *>(ISL_DEVICE_NAME));
+        mSensors[light] = new RoamerLight(const_cast<char *>(ISL_DEVICE_NAME));
         mPollFds[light].fd = mSensors[light]->getFd();
         mPollFds[light].events = POLLIN;
         mPollFds[light].revents = 0;

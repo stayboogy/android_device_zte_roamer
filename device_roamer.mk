@@ -64,20 +64,19 @@ packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/pe
 
 # libs
 PRODUCT_PACKAGES += \
+	brcm_patchram_plus \
 	libreference-ril \
 	libstagefrighthw \
 	FM \
 	lights.roamer \
 	gralloc.roamer \
 	copybit.roamer \
-	sensors.roamer
+	sensors.roamer \
+	prox_cal
 
 PRODUCT_PACKAGES += \
 	libmm-omxcore \
 	libOmxCore \
 	libOmxVenc \
 	libOmxVdec
-
-PRODUCT_PACKAGES += \
-	brcm_patchram_plus
 

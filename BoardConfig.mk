@@ -42,13 +42,21 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := si4708
 
+BOARD_USES_QCOM_LIBRPC := true
+
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
 # misc hardware
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
+
+#gps
 #BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
+#BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 6225
+#BOARD_GPS_LIBRARIES := libloc
+#BOARD_USES_GPSSHIM := true
+#BOARD_GPS_NEEDS_XTRA := true
 
 # ril
 TARGET_PROVIDES_LIBRIL := true
@@ -64,6 +72,4 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
-# inherit from the proprietary version
--include vendor/zte/roamer/BoardConfigVendor.mk
 

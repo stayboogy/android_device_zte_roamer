@@ -28,11 +28,11 @@
 
 #include <cutils/log.h>
 
-#include "SkateLight.h"
+#include "RoamerLight.h"
 
 /*****************************************************************************/
 
-SkateLight::SkateLight(char *dev)
+RoamerLight::RoamerLight(char *dev)
     : SensorBase(dev, "light"),
       mEnabled(0),
       mInputReader(4),
@@ -55,13 +55,13 @@ SkateLight::SkateLight(char *dev)
 
 }
 
-SkateLight::~SkateLight() {
+RoamerLight::~RoamerLight() {
     if (mEnabled) {
         enable(ID_L, 0);
     }
 }
 
-int SkateLight::setInitialState() {
+int RoamerLight::setInitialState() {
     struct input_absinfo absinfo;
     if (!ioctl(data_fd, EVIOCGABS(EVENT_TYPE_LIGHT), &absinfo)) {
         mPendingEvents.light = absinfo.value;
@@ -69,7 +69,7 @@ int SkateLight::setInitialState() {
     return 0;
 }
 
-int SkateLight::enable(int32_t handle, int en) {
+int RoamerLight::enable(int32_t handle, int en) {
 
     if (handle != ID_L)
         return -EINVAL;
@@ -109,11 +109,11 @@ int SkateLight::enable(int32_t handle, int en) {
     return err;
 }
 
-bool SkateLight::hasPendingEvents() const {
+bool RoamerLight::hasPendingEvents() const {
     return mPendingMask;
 }
 
-int SkateLight::readEvents(sensors_event_t* data, int count)
+int RoamerLight::readEvents(sensors_event_t* data, int count)
 {
     if (count < 1)
         return -EINVAL;
@@ -140,7 +140,7 @@ int SkateLight::readEvents(sensors_event_t* data, int count)
                  numEventReceived++;
              }
         } else {
-            LOGE("SkateLight: unknown event (type=%d, code=%d)",type, event->code);
+            LOGE("RoamerLight: unknown event (type=%d, code=%d)",type, event->code);
         }
         mInputReader.next();
     }
