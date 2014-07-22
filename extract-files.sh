@@ -5,6 +5,10 @@
 mkdir blobs
 cd blobs
 
+# keyfiles
+adb pull /system/usr/keylayout/7k_handset.kl
+adb pull /system/usr/keylayout/roamer_keypad.kl
+
 # gps parts
 adb pull /system/lib/hw/gps.default.so
 adb pull /system/lib/libgps.so

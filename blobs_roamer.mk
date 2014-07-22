@@ -1,5 +1,10 @@
 # zte roamer proprietary blobs
 
+# keyfiles
+PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+device/zte/roamer/blobs/roamer_keypad.kl:system/usr/keylayout/roamer_keypad.kl
+
 # oe gps parts
 PRODUCT_COPY_FILES  += \
 device/zte/roamer/blobs/gps.default.so:system/lib/hw/gps.default.so \
