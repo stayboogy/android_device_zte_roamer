@@ -1,5 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
+#BOOGY := yes
+
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi
