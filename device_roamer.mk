@@ -64,6 +64,8 @@ packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/pe
 
 # libs
 PRODUCT_PACKAGES += \
+	libmm-omxcore \
+	libOmxCore \
 	brcm_patchram_plus \
 	libreference-ril \
 	libstagefrighthw \
@@ -74,9 +76,4 @@ PRODUCT_PACKAGES += \
 	sensors.roamer \
 	prox_cal
 
-PRODUCT_PACKAGES += \
-	libmm-omxcore \
-	libOmxCore \
-	libOmxVenc \
-	libOmxVdec
 
