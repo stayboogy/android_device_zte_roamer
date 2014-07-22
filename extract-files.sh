@@ -76,8 +76,6 @@ adb pull /system/bin/akmd8962
 chmod 777 akmd8962
 adb pull /system/bin/qmuxd
 chmod 777 qmuxd
-adb pull /system/bin/proximity.init
-chmod 777 proximity.init
 
 # sip and voip
 adb pull /system/etc/permissions/android.software.sip.voip.xml

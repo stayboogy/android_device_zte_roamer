@@ -69,8 +69,7 @@ device/zte/roamer/blobs/CKPD-daemon:system/bin/CKPD-daemon
 PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/akmd8962:system/bin/akmd8962 \
 device/zte/roamer/blobs/akmd2:system/bin/akmd2 \
-device/zte/roamer/blobs/qmuxd:system/bin/qmuxd \
-device/zte/roamer/blobs/proximity.init:system/bin/proximity.init
+device/zte/roamer/blobs/qmuxd:system/bin/qmuxd
 
 # voip and sip
 PRODUCT_COPY_FILES += \
