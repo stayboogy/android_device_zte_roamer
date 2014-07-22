@@ -5,6 +5,19 @@
 mkdir blobs
 cd blobs
 
+# gps parts
+adb pull /system/lib/hw/gps.default.so
+adb pull /system/lib/libgps.so
+adb pull /system/lib/libloc_api.so
+adb pull /system/lib/libloc_api-rpc-qc.so
+adb pull /system/lib/libloc_ext.so
+adb pull /system/lib/libloc-rpc.so
+adb pull /system/etc/gps.conf
+adb pull /system/etc/loc_parameter.ini
+adb pull /system/etc/pointercal
+adb pull /system/framework/com.qualcomm.location.vzw_library.jar
+adb pull /system/etc/permissions/com.qualcomm.location.vzw_library.xml
+
 # ril parts
 adb pull /system/lib/libril-qc-1.so
 adb pull /system/lib/libril-qcril-hook-oem.so
