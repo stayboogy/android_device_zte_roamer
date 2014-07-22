@@ -145,13 +145,6 @@ service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
 
 service qmuxd /system/bin/qmuxd
 
-service proximity_init /system/bin/proximity.init -r
-    disabled
-    oneshot
-    
-on property:dev.bootdone=1
-    start proximity_init
-
 service pppd /system/bin/pppd file /data/data/zte.com.android.ppptunl/pppd.conf
     user root
     oneshot
