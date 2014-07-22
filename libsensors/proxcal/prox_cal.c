@@ -56,10 +56,6 @@ int main(int argc, char **argv){
     fd = open(TAOS_DEV, O_RDONLY);
     if (fd > 0)
         LOGI("Using taos sensor");
-    else {
-        fd = open(ISL_DEV, O_RDONLY);
-        LOGI("Using isl sensor");
-    }
     if (fd < 0)
         LOGE("Failed to open sensor device");
 
