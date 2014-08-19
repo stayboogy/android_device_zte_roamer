@@ -5,8 +5,9 @@ PRODUCT_COPY_FILES  += \
 device/zte/roamer/blobs/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
 device/zte/roamer/blobs/roamer_keypad.kl:system/usr/keylayout/roamer_keypad.kl
 
-# oe gps parts
+# gps parts
 PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/loc_api_app:system/bin/loc_api_app \
 device/zte/roamer/blobs/gps.default.so:system/lib/hw/gps.default.so \
 device/zte/roamer/blobs/libgps.so:system/lib/libgps.so \
 device/zte/roamer/blobs/libloc_api.so:obj/lib/libloc_api.so \

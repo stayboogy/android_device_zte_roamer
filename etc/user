@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+rm /data/local/init.d_test_log.txt
+touch /data/local/init.d_test_log.txt
+echo "stayboogy did it" >> /data/local/init.d_test_log.txt
+
+# add whatever script you want to this directory
+# or just modify this file to your liking
+
+

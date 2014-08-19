@@ -1,25 +1,17 @@
 LOCAL_PATH := $(call my-dir)
 
-#BOOGY := yes
-
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi
 TARGET_BOARD_PLATFORM := msm7k
-TARGET_BOARD_PLATFORM_GPU := qcom
 
-# for using stock kernel vmsplit configuration (for stability)
-TARGET_USES_2G_VM_SPLIT := true
-
-BOARD_EGL_CFG := device/zte/roamer/etc/egl.cfg
+USE_OPENGL_RENDERER := true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := roamer
 
-TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x02600000
-#BOARD_PAGE_SIZE := 0x00000800
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00400000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00600000
@@ -29,49 +21,10 @@ BOARD_FLASH_BLOCK_SIZE := 0x00020000
 
 TARGET_PREBUILT_KERNEL := device/zte/roamer/kernel
 
-# wifi
-BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
-WPA_SUPPLICANT_VERSION           := VER_0_6_X
-BOARD_WLAN_DEVICE                := bcm_4319
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_PATH_STA          := "/system/etc/fw_4319.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/system/etc/fw_4319_apsta.bin"
-WIFI_DRIVER_MODULE_NAME          := "dhd"
-WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0 firmware_path=/system/etc/fw_4319.bin nvram_path=/system/etc/nv_4319.txt"
+TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
 
-# fm radio
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-BOARD_FM_DEVICE := si4708
-
-BOARD_USES_QCOM_LIBRPC := true
-
-# bluetooth
-BOARD_HAVE_BLUETOOTH := true
-
-# misc hardware
-BOARD_USES_QCOM_LIBRPC := true
-BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
-BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QCOM_LIBS := true
-
-# gps
-BOARD_GPS_LIBRARIES := libloc_api
-BOARD_USES_GPSSHIM := true
-BOARD_GPS_NEEDS_XTRA := true
-
-# ril
-TARGET_PROVIDES_LIBRIL := true
-
-# audio
-TARGET_PROVIDES_LIBAUDIO := true
-
-#camera
-USE_CAMERA_STUB := true
-
-# usb (dirty) configuration
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
+# USB mounting
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
 

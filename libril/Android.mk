@@ -1,9 +1,5 @@
 # Copyright 2006 The Android Open Source Project
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),roamer)
-
-MODULE.TARGET.SHARED_LIBRARIES.libril :=
-
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -25,6 +21,10 @@ LOCAL_MODULE:= libril
 
 LOCAL_LDLIBS += -lpthread
 
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),roamer)
 include $(BUILD_SHARED_LIBRARY)
-
-endif # TARGET_BOOTLOADER_BOARD_NAME
+else ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
+include $(BUILD_SHARED_LIBRARY)
+else ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade2)
+include $(BUILD_SHARED_LIBRARY)
+endif

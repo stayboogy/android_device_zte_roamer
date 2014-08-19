@@ -1,3 +1,11 @@
+import init.roamer.usb.rc
+
+on early-init
+	export EXTERNAL_STORAGE /mnt/sdcard
+	mkdir /mnt/sdcard 0000 system system
+	# for backwards compatibility
+	symlink /mnt/sdcard /sdcard
+
 on init
     mkdir /sqlite_stmt_journals 01777 root root
     mount tmpfs tmpfs /sqlite_stmt_journals size=4m
@@ -43,6 +51,10 @@ on post-fs
     mkdir /data/misc/dhcp 0770 dhcp dhcp
 
 on boot
+# Setup android gadget
+   write /sys/module/g_android/parameters/serial_number roamer
+   write /sys/module/g_android/parameters/product_id 0x1351
+
     setprop bt.chip.type BCM_2070
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
@@ -89,6 +101,18 @@ service usbconfig /sbin/usbconfig
 service akmd /system/bin/akmd8962
     user root
     oneshot
+
+service qmuxd /system/bin/qmuxd
+
+service prox_cal /system/bin/prox
+    oneshot
+
+service uinit /system/bin/uinit
+    oneshot
+
+on property:dev.bootdone=1
+    start prox_cal
+    start uinit
 
 on property:init.svc.bluetoothd=running
     write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
@@ -138,12 +162,15 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
+service start_usb0 /system/bin/logwrapper /system/bin/sh /etc/start_usb0.sh
+    class main
+    disabled
+    oneshot
+
 service ckpd /system/bin/CKPD-daemon
     onrestart /system/bin/log -t RIL-CKPD -p w "CKPD daemon restarted"
 
 service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
-
-service qmuxd /system/bin/qmuxd
 
 service pppd /system/bin/pppd file /data/data/zte.com.android.ppptunl/pppd.conf
     user root
