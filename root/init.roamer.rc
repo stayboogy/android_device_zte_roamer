@@ -95,19 +95,20 @@ on boot
     chown root system /sys/bus/i2c/drivers/ti-fuel-gauge/upmode
     chown root system /sys/bus/i2c/drivers/ti-fuel-gauge/Control
 
-service usbconfig /sbin/usbconfig
-    oneshot
-
 service akmd /system/bin/akmd8962
+    class main
     user root
     oneshot
 
 service qmuxd /system/bin/qmuxd
+    class main
 
 service prox_cal /system/bin/prox
+    class main
     oneshot
 
 service uinit /system/bin/uinit
+    class main
     oneshot
 
 on property:dev.bootdone=1
@@ -122,6 +123,7 @@ on property:init.svc.bluetoothd=stopped
     stop abtfilt
 
 service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init service requested"
+    class main
     user bluetooth
     group bluetooth net_bt_admin
     disabled
@@ -129,6 +131,7 @@ service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init se
 
 service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 \
 --patchram /system/bin/BCM2070B0_002.001.032.0518.0520.hcd /dev/ttyHS0
+class main
 user bluetooth
 group bluetooth net_bt_admin
 disabled 
@@ -141,24 +144,29 @@ on property:persist.sys.wifi.wl=0
     stop wifi_wl_test
 
 service wifi_wl_test /system/bin/sh /system/etc/wifi_wl_test.sh
+    class main
     user root
     disabled
     oneshot
 
 service wlan_prop /system/bin/sh /system/etc/init.wlanprop.sh
+    class main
     oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c /data/misc/wifi/wpa_supplicant.conf
+    class main
     socket wpa_wlan0 dgram 660 wifi wifi
     group system wifi inet dhcp
     disabled
     oneshot 
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
+    class main
     disabled
     oneshot
 
 service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
     disabled
     oneshot
 
@@ -168,9 +176,11 @@ service start_usb0 /system/bin/logwrapper /system/bin/sh /etc/start_usb0.sh
     oneshot
 
 service ckpd /system/bin/CKPD-daemon
+    class main
     onrestart /system/bin/log -t RIL-CKPD -p w "CKPD daemon restarted"
 
 service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
+    class main
 
 service pppd /system/bin/pppd file /data/data/zte.com.android.ppptunl/pppd.conf
     user root

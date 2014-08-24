@@ -27,4 +27,5 @@ TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
-
+# bluetooth
+BOARD_HAVE_BLUETOOTH := true

@@ -20,6 +20,13 @@ device/zte/roamer/etc/start_usb0.sh:system/etc/start_usb0.sh
 PRODUCT_COPY_FILES += \
 device/zte/roamer/modules/dhd.ko:system/lib/modules/dhd.ko
 
+# bluetooth
+PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+device/zte/roamer/blobs/hci_qcomm_init:system/bin/hci_qcomm_init \
+device/zte/roamer/blobs/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd \
+device/zte/roamer/prebuilt/brcm_patchram_plus:system/bin/brcm_patchram_plus
+
 # hardware permissions files
 PRODUCT_COPY_FILES += \
 frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
