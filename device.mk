@@ -14,17 +14,6 @@ device/zte/roamer/root/ueventd.roamer.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc \
 device/zte/roamer/root/start_usb0.sh:system/etc/start_usb0.sh
 
-# modules
-PRODUCT_COPY_FILES += \
-device/zte/roamer/modules/dhd.ko:system/lib/modules/dhd.ko
-
-# bluetooth
-PRODUCT_COPY_FILES  += \
-device/zte/roamer/blobs/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-device/zte/roamer/blobs/hci_qcomm_init:system/bin/hci_qcomm_init \
-device/zte/roamer/blobs/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd \
-device/zte/roamer/prebuilt/brcm_patchram_plus:system/bin/brcm_patchram_plus
-
 # hardware permissions files
 PRODUCT_COPY_FILES += \
 frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
@@ -57,24 +46,15 @@ PRODUCT_PACKAGES += \
 
 # libs
 PRODUCT_PACKAGES += \
-	copybit.roamer \
-	gralloc.roamer \
 	libaudioutils \
         audio.primary.roamer \
         audio_policy.roamer \
-        audio.a2dp.default
+        audio.a2dp.default \
+	libril
 
 PRODUCT_PACKAGES += \
 	lights.roamer \
 	sensors.roamer \
-	prox_cal \
-	brcm_patchram_plus
+	prox_cal
 
-PRODUCT_PACKAGES += \
-	libril \
-	libopencore \
-	libmm-omxcore \
-	libOmxCore \
-	libOmxVdec \
-	libOmxVenc
 
