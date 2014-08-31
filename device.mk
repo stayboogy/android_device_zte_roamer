@@ -46,6 +46,9 @@ PRODUCT_PACKAGES += \
 
 # libs
 PRODUCT_PACKAGES += \
+	hwcomposer.roamer \
+	copybit.roamer \
+	gralloc.roamer \
 	libaudioutils \
         audio.primary.roamer \
         audio_policy.roamer \
