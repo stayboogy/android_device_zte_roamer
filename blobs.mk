@@ -48,7 +48,11 @@ PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 device/zte/roamer/blobs/android.software.sip.xml:system/etc/permissions/android.software.sip.xml
 
-
+# sensors
+PRODUCT_COPY_FILES += \
+device/zte/roamer/blobs/akmd8962:system/bin/akmd8962 \
+device/zte/roamer/blobs/akmd2:system/bin/akmd2 \
+device/zte/roamer/blobs/qmuxd:system/bin/qmuxd
 
 
 
