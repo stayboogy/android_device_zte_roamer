@@ -14,8 +14,10 @@ device/zte/roamer/root/ueventd.roamer.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc \
 device/zte/roamer/root/start_usb0.sh:system/etc/start_usb0.sh
 
-# hardware permissions files
+# permissions
 PRODUCT_COPY_FILES += \
+frameworks/base/data/etc/com.tmobile.software.themes.xml:/system/etc/permissions/com.tmobile.software.themes.xml \
+packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
 frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
 frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
 frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
@@ -37,9 +39,6 @@ PRODUCT_PACKAGES := \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
 	librs_jni
-
-PRODUCT_COPY_FILES += \
-packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 PRODUCT_PACKAGES += \
 	Trebuchet
