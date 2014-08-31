@@ -1,3 +1,11 @@
+# misc
+PRODUCT_COPY_FILES += \
+device/zte/roamer/blobs/apns-conf.xml:system/etc/apns-conf.xml \
+device/zte/roamer/blobs/vold.fstab:system/etc/vold.fstab \
+device/zte/roamer/blobs/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg \
+device/zte/roamer/blobs/port-bridge:system/bin/port-bridge \
+device/zte/roamer/blobs/CKPD-daemon:system/bin/CKPD-daemon
+
 # Sysctl
 PRODUCT_COPY_FILES += \
 device/zte/roamer/prebuilt/01sysctl:system/etc/init.d/01sysctl \
