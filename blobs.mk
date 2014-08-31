@@ -21,24 +21,26 @@ device/zte/roamer/blobs/wl:system/bin/wl
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
-device/zte/roamer/etc/usr/idc/synaptics.idc:system/usr/idc/synaptics.idc \
-device/zte/roamer/etc/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
-device/zte/roamer/etc/usr/idc/cypress-ts-innolux_Ver04.idc:system/usr/idc/cypress-ts-innolux_Ver04.idc \
-device/zte/roamer/etc/usr/idc/melfas-touchscreen.Ver23.idc:system/usr/idc/melfas-touchscreen.Ver23.idc \
-device/zte/roamer/etc/usr/idc/melfas-touchscreen_ver23.idc:system/usr/idc/melfas-touchscreen_ver23.idc \
-device/zte/roamer/etc/usr/idc/melfas-touchscreen_Ver23.idc:system/usr/idc/melfas-touchscreen_Ver23.idc \
-device/zte/roamer/etc/usr/idc/melfas-touchscreen.idc:system/usr/idc/melfas-touchscreen.idc \
-device/zte/roamer/etc/usr/idc/7k_handset.idc:system/usr/idc/7k_handset.idc \
-device/zte/roamer/etc/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-device/zte/roamer/etc/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
-device/zte/roamer/etc/usr/idc/kp_test_input.idc:system/usr/idc/kp_test_input.idc \
-device/zte/roamer/etc/usr/idc/surf_keypad.idc:system/usr/idc/surf_keypad.idc \
-device/zte/roamer/etc/usr/idc/touchscreen-keypad.idc:system/usr/idc/touchscreen-keypad.idc \
-device/zte/roamer/etc/usr/idc/msm_touchscreen.idc:system/usr/idc/msm_touchscreen.idc \
-device/zte/roamer/etc/usr/idc/ts_test_input.idc:system/usr/idc/ts_test_input.idc \
-device/zte/roamer/etc/usr/idc/sensors.idc:system/usr/idc/sensors.idc \
-device/zte/roamer/etc/usr/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl \
-device/zte/roamer/etc/usr/keylayout/cypress-ts-innolux_Ver04.kl:system/usr/keylayout/cypress-ts-innolux_Ver04.kl \
-device/zte/roamer/etc/usr/keylayout/melfas-touchscreen.Ver23.kl:system/usr/keylayout/melfas-touchscreen.Ver23.kl \
-device/zte/roamer/etc/usr/keylayout/melfas-touchscreen_ver23.kl:system/usr/keylayout/melfas-touchscreen_ver23.kl \
-device/zte/roamer/etc/usr/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
+device/zte/roamer/prebuilt/usr/idc/synaptics.idc:system/usr/idc/synaptics.idc \
+device/zte/roamer/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
+device/zte/roamer/prebuilt/usr/idc/cypress-ts-innolux_Ver04.idc:system/usr/idc/cypress-ts-innolux_Ver04.idc \
+device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen.Ver23.idc:system/usr/idc/melfas-touchscreen.Ver23.idc \
+device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen_ver23.idc:system/usr/idc/melfas-touchscreen_ver23.idc \
+device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen_Ver23.idc:system/usr/idc/melfas-touchscreen_Ver23.idc \
+device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen.idc:system/usr/idc/melfas-touchscreen.idc \
+device/zte/roamer/prebuilt/usr/idc/7k_handset.idc:system/usr/idc/7k_handset.idc \
+device/zte/roamer/prebuilt/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
+device/zte/roamer/prebuilt/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
+device/zte/roamer/prebuilt/usr/idc/kp_test_input.idc:system/usr/idc/kp_test_input.idc \
+device/zte/roamer/prebuilt/usr/idc/surf_keypad.idc:system/usr/idc/surf_keypad.idc \
+device/zte/roamer/prebuilt/usr/idc/touchscreen-keypad.idc:system/usr/idc/touchscreen-keypad.idc \
+device/zte/roamer/prebuilt/usr/idc/msm_touchscreen.idc:system/usr/idc/msm_touchscreen.idc \
+device/zte/roamer/prebuilt/usr/idc/ts_test_input.idc:system/usr/idc/ts_test_input.idc \
+device/zte/roamer/prebuilt/usr/idc/sensors.idc:system/usr/idc/sensors.idc \
+device/zte/roamer/prebuilt/usr/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl \
+device/zte/roamer/prebuilt/usr/keylayout/cypress-ts-innolux_Ver04.kl:system/usr/keylayout/cypress-ts-innolux_Ver04.kl \
+device/zte/roamer/prebuilt/usr/keylayout/melfas-touchscreen.Ver23.kl:system/usr/keylayout/melfas-touchscreen.Ver23.kl \
+device/zte/roamer/prebuilt/usr/keylayout/melfas-touchscreen_ver23.kl:system/usr/keylayout/melfas-touchscreen_ver23.kl \
+device/zte/roamer/prebuilt/usr/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
+
+
