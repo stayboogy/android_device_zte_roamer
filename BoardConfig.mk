@@ -21,6 +21,13 @@ TARGET_PREBUILT_KERNEL := device/zte/roamer/kernel
 
 TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
 
+# USB 
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+
+# touchscreen 
+BOARD_USE_LEGACY_TOUCHSCREEN := true
+BOARD_USE_LEGACY_TRACKPAD := true
+
 # CPU
 TARGET_FORCE_CPU_UPLOAD := true
 COMMON_GLOBAL_CFLAGS += -DFORCE_CPU_UPLOAD
@@ -31,14 +38,6 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS -DUNABLE_TO_DEQUEUE
 QCOM_LEGACY_OMX := true
 COMMON_GLOBAL_CFLAGS +=-DQCOM_LEGACY_OMX
-
-# USB mounting
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
-BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
-
-# touchscreen 
-BOARD_USE_LEGACY_TOUCHSCREEN := true
-BOARD_USE_LEGACY_TRACKPAD := true
 
 # wifi
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
@@ -52,6 +51,9 @@ WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/fw_4319.bin nvram
 
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
+
+# camera
+USE_CAMERA_STUB := true
 
 # ril
 BOARD_PROVIDES_LIBRIL := true

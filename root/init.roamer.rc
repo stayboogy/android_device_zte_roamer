@@ -36,7 +36,14 @@ on post-fs
     mkdir /data/misc/wifi/sockets 0770 wifi wifi    
     mkdir /data/misc/dhcp 0770 dhcp dhcp
 
-    chown system system /sys/bus/platform/devices/msm_sdcc.2/polling
+# SD card polling
+    chown system system /sys/module/g_android/parameters/product_id
+    chown system system /sys/devices/platform/msm_sdcc.1/polling
+    chown system system /sys/devices/platform/msm_sdcc.2/polling
+    chown system system /sys/devices/platform/msm_sdcc.3/polling
+    chown system system /sys/devices/platform/msm_sdcc.4/polling
+    chown system system /sys/devices/platform/android_usb/composition
+    chown system system /sys/devices/platform/android_usb/remote_wakeup
 
     mkdir /data/radio 0770 radio radio
 
@@ -49,15 +56,6 @@ on post-fs
     #change product_id prio
     chown root system /sys/module/g_android/parameters/product_id
     chmod 0664 /sys/module/g_android/parameters/product_id
-
-# SD card polling
-    chown system system /sys/module/g_android/parameters/product_id
-    chown system system /sys/devices/platform/msm_sdcc.1/polling
-    chown system system /sys/devices/platform/msm_sdcc.2/polling
-    chown system system /sys/devices/platform/msm_sdcc.3/polling
-    chown system system /sys/devices/platform/msm_sdcc.4/polling
-    chown system system /sys/devices/platform/android_usb/composition
-    chown system system /sys/devices/platform/android_usb/remote_wakeup
 
 on boot
 # Setup android gadget
@@ -149,10 +147,10 @@ service hci_qcomm_init /system/bin/log -t qcom-bluetooth -p i "hci_qcomm_init se
 
 service hciattach /system/bin/logwrapper /system/bin/brcm_patchram_plus --enable_hci --baudrate 3000000 \
 --patchram /system/bin/BCM2070B0_002.001.032.0518.0520.hcd /dev/ttyHS0
-class main
-user bluetooth
-group bluetooth net_bt_admin
-disabled 
+    class main
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled 
 
 on property:persist.sys.wifi.wl=1
     mkdir /data/wifi
@@ -196,6 +194,7 @@ service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyGS0
     class main
 
 service pppd /system/bin/pppd file /data/data/zte.com.android.ppptunl/pppd.conf
+    class main
     user root
     oneshot
     disabled

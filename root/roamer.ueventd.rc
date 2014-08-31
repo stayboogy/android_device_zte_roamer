@@ -1,5 +1,4 @@
 /dev/pmem_audio           0660   system     audio
-/dev/oncrpc/*             0660   radio      system
 /dev/msm_voicememo        0660   system     audio
 
 #permissions for video
@@ -34,12 +33,17 @@
 /dev/akm8962_aot           0777   system     system
 /dev/akm8962_dev           0777   system     system
 /dev/oncrpc/*              0660   radio      system
-/dev/msm_camera/*          0660   system     system
+/dev/msm_camera/*          0777   graphics  graphics
+/dev/graphics/fb0          0777   graphics  graphics
 /dev/smdcntl0              0640   radio      radio
 /dev/smdcntl1              0640   radio      radio
 /dev/smdcntl2              0640   radio      radio
-/dev/kgsl-3d0              0666   root       root
+/dev/kgsl-3d0              0666   graphics  graphics
 /dev/taos                  0777   root       root
 /dev/ISL                   0777   root       root
 /dev/si4708                0777   root       root
 /dev/msm_preproc_ctl       0660   system     audio
+/dev/genlock               0666   graphics  graphics
+
+
+

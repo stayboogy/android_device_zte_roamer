@@ -31,12 +31,11 @@ device/zte/roamer/blobs/libgsl.so:system/lib/libgsl.so \
 device/zte/roamer/blobs/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
 device/zte/roamer/blobs/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
-# bluetooth
-PRODUCT_COPY_FILES  += \
-device/zte/roamer/blobs/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-device/zte/roamer/blobs/hci_qcomm_init:system/bin/hci_qcomm_init \
-device/zte/roamer/blobs/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd \
-device/zte/roamer/prebuilt/brcm_patchram_plus:system/bin/brcm_patchram_plus
+# sensors
+PRODUCT_COPY_FILES += \
+device/zte/roamer/blobs/akmd8962:system/bin/akmd8962 \
+device/zte/roamer/blobs/akmd2:system/bin/akmd2 \
+device/zte/roamer/blobs/qmuxd:system/bin/qmuxd
 
 # ril parts
 PRODUCT_COPY_FILES  += \
@@ -47,12 +46,6 @@ device/zte/roamer/blobs/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oe
 PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 device/zte/roamer/blobs/android.software.sip.xml:system/etc/permissions/android.software.sip.xml
-
-# sensors
-PRODUCT_COPY_FILES += \
-device/zte/roamer/blobs/akmd8962:system/bin/akmd8962 \
-device/zte/roamer/blobs/akmd2:system/bin/akmd2 \
-device/zte/roamer/blobs/qmuxd:system/bin/qmuxd
 
 # wifi
 PRODUCT_COPY_FILES += \
@@ -69,6 +62,13 @@ device/zte/roamer/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.co
 device/zte/roamer/blobs/init.wlanprop.sh:system/etc/init.wlanprop.sh \
 device/zte/roamer/blobs/wifi_wl_test.sh:system/etc/wifi_wl_test.sh \
 device/zte/roamer/blobs/wl:system/bin/wl
+
+# bluetooth
+PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+device/zte/roamer/blobs/hci_qcomm_init:system/bin/hci_qcomm_init \
+device/zte/roamer/blobs/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd \
+device/zte/roamer/prebuilt/brcm_patchram_plus:system/bin/brcm_patchram_plus
 
 # gps parts
 PRODUCT_COPY_FILES  += \
@@ -135,4 +135,5 @@ device/zte/roamer/blobs/libvdmfumo.so:system/lib/libvdmfumo.so \
 device/zte/roamer/blobs/libwms.so:system/lib/libwms.so \
 device/zte/roamer/blobs/libwmsts.so:system/lib/libwmsts.so \
 device/zte/roamer/blobs/libWVphoneAPI.so:system/lib/libWVphoneAPI.so
+
 

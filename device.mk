@@ -1,3 +1,5 @@
+DEVICE_PACKAGE_OVERLAYS := device/zte/roamer/overlay
+
 PRODUCT_AAPT_CONFIG += normal mdpi
 PRODUCT_AAPT_PREF_CONFIG += mdpi
 
@@ -10,9 +12,46 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 device/zte/roamer/root/init.rc:root/init.rc \
 device/zte/roamer/root/init.roamer.rc:root/init.roamer.rc \
-device/zte/roamer/root/ueventd.roamer.rc:root/ueventd.roamer.rc \
+device/zte/roamer/root/roamer.ueventd.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc \
 device/zte/roamer/root/start_usb0.sh:system/etc/start_usb0.sh
+
+# apps
+PRODUCT_PACKAGES += \
+	CMFileManager \
+	ThemeManager \
+	ThemeChooser \
+	com.tmobile.themes \
+	libcyanogen-dsp \
+	DSPManager \
+	Trebuchet \
+	Stk \
+	LatinIME \
+	su \
+	Basic \
+	Superuser \
+	HoloSpiralWallpaper \
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	MagicSmokeWallpapers \
+	VisualizationWallpapers
+
+# libs
+PRODUCT_PACKAGES += \
+	hwcomposer.roamer \
+	copybit.roamer \
+	gralloc.roamer \
+	lights.roamer \
+	sensors.roamer \
+	prox_cal \
+	audio.primary.roamer \
+	audio_policy.roamer \
+	audio.a2dp.default \
+	libaudioutils \
+	libreference-ril \
+	libril \
+	librpc \
+	libstagefrighthw
 
 # permissions
 PRODUCT_COPY_FILES += \
@@ -32,43 +71,6 @@ frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/androi
 frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
-# apps
-PRODUCT_PACKAGES += \
-	CMFileManager \
-	ThemeManager \
-	ThemeChooser \
-	com.tmobile.themes \
-	libcyanogen-dsp \
-	DSPManager \
-	Trebuchet \
-	Stk \
-	Camera \
-	LatinIME \
-	su \
-	Basic \
-	Superuser \
-	HoloSpiralWallpaper \
-	LiveWallpapers \
-	LiveWallpapersPicker \
-	MagicSmokeWallpapers \
-	VisualizationWallpapers
 
-# libs
-PRODUCT_PACKAGES += \
-	hwcomposer.roamer \
-	copybit.roamer \
-	gralloc.roamer \
-	libaudioutils \
-        audio.primary.roamer \
-        audio_policy.roamer \
-        audio.a2dp.default \
-	libril \
-	librpc \
-	libstagefrighthw
-
-PRODUCT_PACKAGES += \
-	lights.roamer \
-	sensors.roamer \
-	prox_cal
 
 
