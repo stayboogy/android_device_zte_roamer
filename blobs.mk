@@ -23,6 +23,11 @@ device/zte/roamer/blobs/libgsl.so:system/lib/libgsl.so \
 device/zte/roamer/blobs/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
 device/zte/roamer/blobs/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
-
+# bluetooth
+PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+device/zte/roamer/blobs/hci_qcomm_init:system/bin/hci_qcomm_init \
+device/zte/roamer/blobs/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd \
+device/zte/roamer/prebuilt/brcm_patchram_plus:system/bin/brcm_patchram_plus
 
 
