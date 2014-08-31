@@ -1113,7 +1113,7 @@ status_t AudioHardware::setVoiceVolume(float v)
         v = 1.0;
     }
 
-    int vol = lrint(v * 7.0);
+    int vol = lrint(v * 11.0);
     LOGD("setVoiceVolume(%f)\n", v);
     LOGI("Setting in-call volume to %d (available range is 0 to 7)\n", vol);
 
@@ -1131,7 +1131,7 @@ status_t AudioHardware::setVoiceVolume(float v)
 status_t AudioHardware::setMasterVolume(float v)
 {
     android::Mutex::Autolock lock(mLock);
-    int vol = ceil(v * 7.0);
+    int vol = ceil(v * 11.0);
     LOGI("Set master volume to %d.\n", vol);
     set_volume_rpc(SND_DEVICE_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_SPEAKER, SND_METHOD_VOICE, vol, m7xsnddriverfd);
@@ -1273,6 +1273,7 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
         // call
         // Recording will happen through currently active tx device
         if(inputDevice == AudioSystem::DEVICE_IN_VOICE_CALL){
+	// fixes voice on caller's end being muted in call for ZTE Roamer (possibly other devices)
 	mBuiltinMicSelected = (inputDevice == AudioSystem::DEVICE_IN_BUILTIN_MIC);
             return NO_ERROR;
         if (inputDevice != 0) {
