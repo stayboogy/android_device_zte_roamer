@@ -55,3 +55,5 @@ BOARD_HAVE_BLUETOOTH := true
 
 # ril
 BOARD_PROVIDES_LIBRIL := true
+
+

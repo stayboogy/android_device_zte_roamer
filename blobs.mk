@@ -70,5 +70,21 @@ device/zte/roamer/blobs/init.wlanprop.sh:system/etc/init.wlanprop.sh \
 device/zte/roamer/blobs/wifi_wl_test.sh:system/etc/wifi_wl_test.sh \
 device/zte/roamer/blobs/wl:system/bin/wl
 
+# gps parts
+PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/loc_api_app:system/bin/loc_api_app \
+device/zte/roamer/blobs/gps.default.so:system/lib/hw/gps.default.so \
+device/zte/roamer/blobs/libgps.so:system/lib/libgps.so \
+device/zte/roamer/blobs/libloc_api.so:obj/lib/libloc_api.so \
+device/zte/roamer/blobs/libloc_api.so:system/lib/libloc_api.so \
+device/zte/roamer/blobs/libloc_api-rpc-qc.so:system/lib/libloc_api-rpc-qc.so \
+device/zte/roamer/blobs/libloc_ext.so:system/lib/libloc_ext.so \
+device/zte/roamer/blobs/libloc-rpc.so:system/lib/libloc-rpc.so \
+device/zte/roamer/blobs/gps.conf:system/etc/gps.conf \
+device/zte/roamer/blobs/loc_parameter.ini:system/etc/loc_parameter.ini \
+device/zte/roamer/blobs/pointercal:system/etc/pointercal \
+device/zte/roamer/blobs/com.qualcomm.location.vzw_library.jar:system/framework/com.qualcomm.location.vzw_library.jar \
+device/zte/roamer/blobs/com.qualcomm.location.vzw_library.xml:system/etc/permissions/com.qualcomm.location.vzw_library.xml
+
 
 
