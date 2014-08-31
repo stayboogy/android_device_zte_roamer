@@ -65,7 +65,7 @@ device/zte/roamer/blobs/fw_4319_apsta.bin:system/etc/fw_4319_apsta.bin \
 device/zte/roamer/blobs/fw_4319.bin:system/etc/fw_4319.bin \
 device/zte/roamer/blobs/nv_4319.txt:system/etc/nv_4319.txt \
 device/zte/roamer/blobs/test_4319.bin:system/etc/test_4319.bin \
-device/zte/roamer/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+device/zte/roamer/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 device/zte/roamer/blobs/init.wlanprop.sh:system/etc/init.wlanprop.sh \
 device/zte/roamer/blobs/wifi_wl_test.sh:system/etc/wifi_wl_test.sh \
 device/zte/roamer/blobs/wl:system/bin/wl
