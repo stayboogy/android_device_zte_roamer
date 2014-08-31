@@ -30,4 +30,17 @@ device/zte/roamer/blobs/hci_qcomm_init:system/bin/hci_qcomm_init \
 device/zte/roamer/blobs/BCM2070B0_002.001.032.0518.0520.hcd:system/bin/BCM2070B0_002.001.032.0518.0520.hcd \
 device/zte/roamer/prebuilt/brcm_patchram_plus:system/bin/brcm_patchram_plus
 
+# ril parts
+PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/libril-qc-1.so:system/lib/libril-qc-1.so \
+device/zte/roamer/blobs/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so
+
+# voip and sip
+PRODUCT_COPY_FILES += \
+device/zte/roamer/blobs/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+device/zte/roamer/blobs/android.software.sip.xml:system/etc/permissions/android.software.sip.xml
+
+
+
+
 
