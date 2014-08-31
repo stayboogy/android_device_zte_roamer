@@ -7,4 +7,7 @@ ro.build.baseband_version=Z990B01
 ro.vold.umsdirtyratio=20
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
+sys.usb.config=mass_storage,adb
+persist.sys.usb.config=mass_storage,adb
+persist.service.adb.enable=1
 persist.sys.ui.hw=true
