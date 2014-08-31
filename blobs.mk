@@ -1,4 +1,7 @@
-
+# Sysctl
+PRODUCT_COPY_FILES += \
+device/zte/roamer/prebuilt/01sysctl:system/etc/init.d/01sysctl \
+device/zte/roamer/prebuilt/sysctl.conf:system/etc/sysctl.conf
 
 # touchscreen
 PRODUCT_COPY_FILES += \

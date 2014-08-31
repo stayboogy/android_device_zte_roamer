@@ -15,7 +15,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=roamer BUILD_ID=IMM76 BUILD_FINGERP
 PRODUCT_COPY_FILES += \
 device/zte/roamer/root/initlogo.rle:root/initlogo.rle \
 device/zte/roamer/root/bootanimation.zip:system/media/bootanimation.zip \
-device/zte/roamer/etc/uinit:system/bin/uinit \
-device/zte/roamer/etc/prox:system/bin/prox \
-device/zte/roamer/etc/user:system/etc/init.d/user
-
+device/zte/roamer/prebuilt/uinit:system/bin/uinit \
+device/zte/roamer/prebuilt/prox:system/bin/prox \
+device/zte/roamer/prebuilt/user:system/etc/init.d/user
