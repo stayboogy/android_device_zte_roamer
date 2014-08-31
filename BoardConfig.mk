@@ -40,6 +40,16 @@ BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 BOARD_USE_LEGACY_TRACKPAD := true
 
+# wifi
+BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+WPA_SUPPLICANT_VERSION           := VER_0_6_X
+BOARD_WLAN_DEVICE                := bcm_4319
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/dhd.ko"
+WIFI_DRIVER_FW_PATH_STA          := "/system/etc/fw_4319.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/system/etc/fw_4319_apsta.bin"
+WIFI_DRIVER_MODULE_NAME          := "dhd"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/fw_4319.bin nvram_path=/system/etc/nv_4319.txt"
+
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
 

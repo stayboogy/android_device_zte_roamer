@@ -54,5 +54,21 @@ device/zte/roamer/blobs/akmd8962:system/bin/akmd8962 \
 device/zte/roamer/blobs/akmd2:system/bin/akmd2 \
 device/zte/roamer/blobs/qmuxd:system/bin/qmuxd
 
+# wifi
+PRODUCT_COPY_FILES += \
+device/zte/roamer/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
+device/zte/roamer/blobs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+device/zte/roamer/blobs/cfg.dat:system/etc/firmware/wlan/cfg.dat \
+device/zte/roamer/blobs/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini \
+device/zte/roamer/blobs/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
+device/zte/roamer/blobs/fw_4319_apsta.bin:system/etc/fw_4319_apsta.bin \
+device/zte/roamer/blobs/fw_4319.bin:system/etc/fw_4319.bin \
+device/zte/roamer/blobs/nv_4319.txt:system/etc/nv_4319.txt \
+device/zte/roamer/blobs/test_4319.bin:system/etc/test_4319.bin \
+device/zte/roamer/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+device/zte/roamer/blobs/init.wlanprop.sh:system/etc/init.wlanprop.sh \
+device/zte/roamer/blobs/wifi_wl_test.sh:system/etc/wifi_wl_test.sh \
+device/zte/roamer/blobs/wl:system/bin/wl
+
 
 

@@ -31,7 +31,10 @@ on post-fs
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 system wifi
     mkdir /data/system 0775 system system
-    symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
+#    symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
+
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi    
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
 
     chown system system /sys/bus/platform/devices/msm_sdcc.2/polling
 
@@ -46,9 +49,6 @@ on post-fs
     #change product_id prio
     chown root system /sys/module/g_android/parameters/product_id
     chmod 0664 /sys/module/g_android/parameters/product_id
-
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi    
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
 
 # SD card polling
     chown system system /sys/module/g_android/parameters/product_id
