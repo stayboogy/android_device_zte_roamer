@@ -18,3 +18,8 @@ device/zte/roamer/root/bootanimation.zip:system/media/bootanimation.zip \
 device/zte/roamer/prebuilt/uinit:system/bin/uinit \
 device/zte/roamer/prebuilt/prox:system/bin/prox \
 device/zte/roamer/prebuilt/user:system/etc/init.d/user
+
+include frameworks/base/data/sounds/NewAudio.mk
+include frameworks/base/data/sounds/OldAudio.mk
+include frameworks/base/data/sounds/AudioPackageNewWave.mk
+include vendor/cm/config/cm_audio.mk
