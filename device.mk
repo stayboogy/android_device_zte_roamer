@@ -32,16 +32,26 @@ frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/androi
 frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
-# live wallpapers
-PRODUCT_PACKAGES := \
+# apps
+PRODUCT_PACKAGES += \
+	CMFileManager \
+	ThemeManager \
+	ThemeChooser \
+	com.tmobile.themes \
+	libcyanogen-dsp \
+	DSPManager \
+	Trebuchet \
+	Stk \
+	Camera \
+	LatinIME \
+	su \
+	Basic \
+	Superuser \
+	HoloSpiralWallpaper \
 	LiveWallpapers \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
-	VisualizationWallpapers \
-	librs_jni
-
-PRODUCT_PACKAGES += \
-	Trebuchet
+	VisualizationWallpapers
 
 # libs
 PRODUCT_PACKAGES += \
