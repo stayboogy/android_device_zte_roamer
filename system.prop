@@ -1,0 +1,10 @@
+#
+# system.prop for roamer
+#
+rild.libpath=/system/lib/libril-qc-1.so
+rild.libargs=-d /dev/smd0
+ro.build.baseband_version=Z990B01
+ro.vold.umsdirtyratio=20
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
+
