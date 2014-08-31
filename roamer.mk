@@ -1,6 +1,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 $(call inherit-product, device/zte/roamer/device.mk)
-$(call inherit-product, device/zte/roamer/icsblobs.mk)
+$(call inherit-product, device/zte/roamer/blobs.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := roamer
