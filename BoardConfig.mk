@@ -21,6 +21,14 @@ TARGET_PREBUILT_KERNEL := device/zte/roamer/kernel
 
 TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
 
+# CPU
+TARGET_FORCE_CPU_UPLOAD := true
+COMMON_GLOBAL_CFLAGS += -DFORCE_CPU_UPLOAD
+
+# Graphics
+BOARD_EGL_CFG := device/zte/roamer/blobs/egl.cfg
+COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS -DUNABLE_TO_DEQUEUE
+
 # USB mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
