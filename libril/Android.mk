@@ -21,10 +21,4 @@ LOCAL_MODULE:= libril
 
 LOCAL_LDLIBS += -lpthread
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),roamer)
 include $(BUILD_SHARED_LIBRARY)
-else ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
-include $(BUILD_SHARED_LIBRARY)
-else ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade2)
-include $(BUILD_SHARED_LIBRARY)
-endif
