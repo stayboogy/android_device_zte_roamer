@@ -53,7 +53,8 @@ PRODUCT_PACKAGES += \
         audio_policy.roamer \
         audio.a2dp.default \
 	libril \
-	librpc
+	librpc \
+	libstagefrighthw
 
 PRODUCT_PACKAGES += \
 	lights.roamer \
