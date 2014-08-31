@@ -31,3 +31,6 @@ BOARD_USE_LEGACY_TRACKPAD := true
 
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
+
+# ril
+BOARD_PROVIDES_LIBRIL := true
