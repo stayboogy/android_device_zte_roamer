@@ -1,4 +1,16 @@
 
+
+# touchscreen
+PRODUCT_COPY_FILES += \
+device/zte/roamer/prebuilt/usr/idc/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
+device/zte/roamer/prebuilt/usr/keychars/mxt224_ts_input.kcm:system/usr/keychars/mxt224_ts_input.kcm \
+device/zte/roamer/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+device/zte/roamer/prebuilt/usr/keylayout/roamer_keypad.kl:system/usr/keylayout/roamer_keypad.kl \
+device/zte/roamer/prebuilt/usr/idc/Fts-touchscreen.idc:system/usr/idc/Fts-touchscreen.idc \
+device/zte/roamer/prebuilt/usr/idc/synaptics-rmi4-ts.idc:system/usr/idc/synaptics-rmi4-ts.idc \
+device/zte/roamer/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+
+
 PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
 device/zte/roamer/blobs/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
@@ -19,28 +31,6 @@ device/zte/roamer/blobs/wifi_wl_test.sh:system/etc/wifi_wl_test.sh \
 device/zte/roamer/blobs/wl:system/bin/wl
 
 
-# Touchscreen
-PRODUCT_COPY_FILES += \
-device/zte/roamer/prebuilt/usr/idc/synaptics.idc:system/usr/idc/synaptics.idc \
-device/zte/roamer/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
-device/zte/roamer/prebuilt/usr/idc/cypress-ts-innolux_Ver04.idc:system/usr/idc/cypress-ts-innolux_Ver04.idc \
-device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen.Ver23.idc:system/usr/idc/melfas-touchscreen.Ver23.idc \
-device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen_ver23.idc:system/usr/idc/melfas-touchscreen_ver23.idc \
-device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen_Ver23.idc:system/usr/idc/melfas-touchscreen_Ver23.idc \
-device/zte/roamer/prebuilt/usr/idc/melfas-touchscreen.idc:system/usr/idc/melfas-touchscreen.idc \
-device/zte/roamer/prebuilt/usr/idc/7k_handset.idc:system/usr/idc/7k_handset.idc \
-device/zte/roamer/prebuilt/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-device/zte/roamer/prebuilt/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
-device/zte/roamer/prebuilt/usr/idc/kp_test_input.idc:system/usr/idc/kp_test_input.idc \
-device/zte/roamer/prebuilt/usr/idc/surf_keypad.idc:system/usr/idc/surf_keypad.idc \
-device/zte/roamer/prebuilt/usr/idc/touchscreen-keypad.idc:system/usr/idc/touchscreen-keypad.idc \
-device/zte/roamer/prebuilt/usr/idc/msm_touchscreen.idc:system/usr/idc/msm_touchscreen.idc \
-device/zte/roamer/prebuilt/usr/idc/ts_test_input.idc:system/usr/idc/ts_test_input.idc \
-device/zte/roamer/prebuilt/usr/idc/sensors.idc:system/usr/idc/sensors.idc \
-device/zte/roamer/prebuilt/usr/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl \
-device/zte/roamer/prebuilt/usr/keylayout/cypress-ts-innolux_Ver04.kl:system/usr/keylayout/cypress-ts-innolux_Ver04.kl \
-device/zte/roamer/prebuilt/usr/keylayout/melfas-touchscreen.Ver23.kl:system/usr/keylayout/melfas-touchscreen.Ver23.kl \
-device/zte/roamer/prebuilt/usr/keylayout/melfas-touchscreen_ver23.kl:system/usr/keylayout/melfas-touchscreen_ver23.kl \
-device/zte/roamer/prebuilt/usr/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
+
 
 
