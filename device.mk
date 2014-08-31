@@ -8,6 +8,7 @@ PRODUCT_COPY_FILES += \
 
 # ramdisk
 PRODUCT_COPY_FILES += \
+device/zte/roamer/root/init.rc:root/init.rc \
 device/zte/roamer/root/init.roamer.rc:root/init.roamer.rc \
 device/zte/roamer/root/ueventd.roamer.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc
