@@ -11,11 +11,8 @@ PRODUCT_COPY_FILES += \
 device/zte/roamer/root/init.rc:root/init.rc \
 device/zte/roamer/root/init.roamer.rc:root/init.roamer.rc \
 device/zte/roamer/root/ueventd.roamer.rc:root/ueventd.roamer.rc \
-device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc
-
-# etc
-PRODUCT_COPY_FILES  += \
-device/zte/roamer/etc/start_usb0.sh:system/etc/start_usb0.sh
+device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc \
+device/zte/roamer/root/start_usb0.sh:system/etc/start_usb0.sh
 
 # modules
 PRODUCT_COPY_FILES += \

@@ -95,6 +95,11 @@ on boot
     chown root system /sys/bus/i2c/drivers/ti-fuel-gauge/upmode
     chown root system /sys/bus/i2c/drivers/ti-fuel-gauge/Control
 
+service start_usb0 /system/bin/logwrapper /system/bin/sh /etc/start_usb0.sh
+    class main
+    disabled
+    oneshot
+
 service akmd /system/bin/akmd8962
     class main
     user root
@@ -166,11 +171,6 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     oneshot
 
 service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service start_usb0 /system/bin/logwrapper /system/bin/sh /etc/start_usb0.sh
     class main
     disabled
     oneshot
