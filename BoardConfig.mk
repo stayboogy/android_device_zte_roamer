@@ -47,7 +47,7 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/dhd.ko"
 WIFI_DRIVER_FW_PATH_STA          := "/system/etc/fw_4319.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/etc/fw_4319_apsta.bin"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
-WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/fw_4319.bin nvram_path=/system/etc/nv_4319.txt"
+WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan firmware_path=/system/etc/fw_4319.bin nvram_path=/system/etc/nv_4319.txt"
 
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true

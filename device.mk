@@ -16,8 +16,16 @@ device/zte/roamer/root/roamer.ueventd.rc:root/ueventd.roamer.rc \
 device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc \
 device/zte/roamer/root/start_usb0.sh:system/etc/start_usb0.sh
 
+# terminal, CM
+PRODUCT_COPY_FILES +=  \
+vendor/cm/proprietary/Term.apk:system/app/Term.apk \
+vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so \
+vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+
 # apps
 PRODUCT_PACKAGES += \
+	charger \
+	charger_res_images \
 	CMFileManager \
 	ThemeManager \
 	ThemeChooser \
@@ -26,24 +34,29 @@ PRODUCT_PACKAGES += \
 	DSPManager \
 	Trebuchet \
 	Stk \
-	LatinIME \
-	su \
-	Basic \
+	Camera \
 	Superuser \
+	su \
 	HoloSpiralWallpaper \
 	LiveWallpapers \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
-	VisualizationWallpapers
+	VisualizationWallpapers \
+	Basic \
+	MusicFX \
+	audio_effects.conf
 
 # libs
 PRODUCT_PACKAGES += \
+	RoamerParts \
 	hwcomposer.roamer \
 	copybit.roamer \
 	gralloc.roamer \
 	lights.roamer \
 	sensors.roamer \
 	prox_cal \
+	libcamera \
+	camera.roamer \
 	audio.primary.roamer \
 	audio_policy.roamer \
 	audio.a2dp.default \

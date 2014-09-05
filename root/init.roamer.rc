@@ -3,7 +3,7 @@ import init.roamer.usb.rc
 on early-init
     export EXTERNAL_STORAGE /mnt/sdcard
     mkdir /mnt/sdcard 0000 system system
-# for backwards compatibility
+    # for backwards compatibility
     symlink /mnt/sdcard /sdcard
 
 on init
@@ -28,15 +28,8 @@ on init
     chown root system /sys/kernel/debug/gpio/gpio_out_h   
 
 on post-fs
-    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 system wifi
-    mkdir /data/system 0775 system system
-#    symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi    
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
-
-# SD card polling
+    # SD card polling
     chown system system /sys/module/g_android/parameters/product_id
     chown system system /sys/devices/platform/msm_sdcc.1/polling
     chown system system /sys/devices/platform/msm_sdcc.2/polling
@@ -44,6 +37,20 @@ on post-fs
     chown system system /sys/devices/platform/msm_sdcc.4/polling
     chown system system /sys/devices/platform/android_usb/composition
     chown system system /sys/devices/platform/android_usb/remote_wakeup
+
+    # wifi
+    # give system access to wpa_supplicant.conf for backup and restore
+    mkdir /data/misc/wifi 0770 wifi wifi
+    chmod 0770 /data/misc/wifi
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+
+    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 system wifi
+    mkdir /data/system 0775 system system
+#   symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
+
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi    
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
 
     mkdir /data/radio 0770 radio radio
 
@@ -58,11 +65,11 @@ on post-fs
     chmod 0664 /sys/module/g_android/parameters/product_id
 
 on boot
-# Setup android gadget
-   write /sys/module/g_android/parameters/serial_number roamer
-   write /sys/module/g_android/parameters/product_id 0x1351
+    # Setup android gadget
+    write /sys/module/g_android/parameters/serial_number roamer
+    write /sys/module/g_android/parameters/product_id 0x1351
 
-# Enable MASS storage on SDCARD
+    # Enable MASS storage on SDCARD
     write /sys/devices/platform/mass_storage/lun0/file /dev/block/mmcblk0p1
     write /sys/bus/platform/drivers/msm_sdcc/msm_sdcc.1/polling 1
 

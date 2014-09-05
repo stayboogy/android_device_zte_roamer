@@ -2,6 +2,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/zte/roamer/device.mk)
 $(call inherit-product, device/zte/roamer/blobs.mk)
 
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.cm.version=experimental_alpha_full_one
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := roamer
 PRODUCT_DEVICE := roamer

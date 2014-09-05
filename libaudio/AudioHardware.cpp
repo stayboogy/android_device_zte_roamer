@@ -1273,7 +1273,6 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input)
         // call
         // Recording will happen through currently active tx device
         if(inputDevice == AudioSystem::DEVICE_IN_VOICE_CALL){
-	// fixes voice on caller's end being muted in call for ZTE Roamer (possibly other devices)
 	mBuiltinMicSelected = (inputDevice == AudioSystem::DEVICE_IN_BUILTIN_MIC);
             return NO_ERROR;
         if (inputDevice != 0) {

@@ -78,7 +78,7 @@
          a percentage, which is relative to the duration of the enter/open
          animation of the window being shown that is dimming behind, or it may
          be an integer for a constant duration. -->
-    <fraction name="config_dimBehindFadeDuration">100%</fraction>
+    <fraction name="config_dimBehindFadeDuration">0%</fraction>
 
     <!-- The maximum width we would prefer dialogs to be.  0 if there is no
          maximum (let them grow as large as the screen).  Actual values are
@@ -278,7 +278,7 @@
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
-    <bool name="config_automatic_brightness_available">true</bool>
+    <bool name="config_automatic_brightness_available">false</bool>
 
     <!-- Don't name config resources like this.  It should look like config_annoyDianne -->
     <bool name="config_annoy_dianne">true</bool>
@@ -508,22 +508,18 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>50</item>
-        <item>75</item>
-        <item>100</item>
-        <item>150</item>
-        <item>200</item>
     </integer-array>
 
     <!-- Flag indicating whether we should enable automatic brightness for
          the button and keyboard backlights. -->
-    <bool name="config_autoBrightnessButtonKeyboard">false</bool>
+    <bool name="config_autoBrightnessButtonKeyboard">true</bool>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>255</item>
     </integer-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
@@ -835,5 +831,16 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">7</integer>
+
+    <!-- Timeout in MS for how long you have to long-press the back key to
+         kill the foreground app. -->
+    <integer name="config_backKillTimeout">2000</integer>
+
+
+    <!-- Device has a h/w rotation lock switch -->
+    <bool name="config_hasRotationLockSwitch">false</bool>
+
+    <!--Boolean to enable stk functionality on Samsung phones-->
+    <bool name="config_samsung_stk">false</bool>
 
 </resources>

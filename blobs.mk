@@ -1,3 +1,8 @@
+# Sysctl
+#PRODUCT_COPY_FILES += \
+#device/zte/roamer/prebuilt/01sysctl:system/etc/init.d/01sysctl \
+#device/zte/roamer/prebuilt/sysctl.conf:system/etc/sysctl.conf
+
 # misc
 PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/apns-conf.xml:system/etc/apns-conf.xml \
@@ -5,11 +10,6 @@ device/zte/roamer/blobs/vold.fstab:system/etc/vold.fstab \
 device/zte/roamer/blobs/01_qcomm_omx.cfg:system/etc/01_qcomm_omx.cfg \
 device/zte/roamer/blobs/port-bridge:system/bin/port-bridge \
 device/zte/roamer/blobs/CKPD-daemon:system/bin/CKPD-daemon
-
-# Sysctl
-PRODUCT_COPY_FILES += \
-device/zte/roamer/prebuilt/01sysctl:system/etc/init.d/01sysctl \
-device/zte/roamer/prebuilt/sysctl.conf:system/etc/sysctl.conf
 
 # touchscreen
 PRODUCT_COPY_FILES += \
@@ -47,10 +47,16 @@ PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 device/zte/roamer/blobs/android.software.sip.xml:system/etc/permissions/android.software.sip.xml
 
+# camera
+PRODUCT_COPY_FILES += \
+device/zte/roamer/prebuilt/liboemcamera.so:system/lib/liboemcamera.so \
+device/zte/roamer/blobs/libmmjpeg.so:system/lib/libmmjpeg.so \
+device/zte/roamer/blobs/libmmipl.so:system/lib/libmmipl.so
+
 # wifi
 PRODUCT_COPY_FILES += \
 device/zte/roamer/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
-device/zte/roamer/blobs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+device/zte/roamer/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 device/zte/roamer/blobs/cfg.dat:system/etc/firmware/wlan/cfg.dat \
 device/zte/roamer/blobs/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini \
 device/zte/roamer/blobs/qcom_fw.bin:system/etc/firmware/wlan/qcom_fw.bin \
@@ -58,10 +64,10 @@ device/zte/roamer/blobs/fw_4319_apsta.bin:system/etc/fw_4319_apsta.bin \
 device/zte/roamer/blobs/fw_4319.bin:system/etc/fw_4319.bin \
 device/zte/roamer/blobs/nv_4319.txt:system/etc/nv_4319.txt \
 device/zte/roamer/blobs/test_4319.bin:system/etc/test_4319.bin \
-device/zte/roamer/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 device/zte/roamer/blobs/init.wlanprop.sh:system/etc/init.wlanprop.sh \
 device/zte/roamer/blobs/wifi_wl_test.sh:system/etc/wifi_wl_test.sh \
-device/zte/roamer/blobs/wl:system/bin/wl
+device/zte/roamer/blobs/wl:system/bin/wl \
+device/zte/roamer/blobs/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
 # bluetooth
 PRODUCT_COPY_FILES  += \

@@ -1,0 +1,9 @@
+[PARENT]
+git://github.com/CyanogenMod/android.git -b ics
+
+# Instead of diffs I'm including the whole files that were changed to get the build to where it is now.
+# As long as you are building with the above parent then all will be fine.
+# Backup the originals first as a precaution.
+# Replace appropriately.
+# stayboogy
+
