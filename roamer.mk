@@ -1,39 +1,16 @@
-$(call inherit-product, device/zte/roamer/blobs_roamer.mk)
+$(call inherit-product, device/zte/roamer/blobs.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/zte/roamer/overlay
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := aosp_roamer
-PRODUCT_DEVICE := roamer
-PRODUCT_BRAND := ZTE
-PRODUCT_MANUFACTURER := ZTE
-PRODUCT_MODEL := Z990
 
 PRODUCT_AAPT_CONFIG += normal mdpi
 PRODUCT_AAPT_PREF_CONFIG += mdpi
-
-LOCAL_KERNEL := device/zte/roamer/kernel
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_KERNEL):kernel
-
-# ramdisk
-PRODUCT_COPY_FILES += \
-device/zte/roamer/root/init.roamer.rc:root/init.roamer.rc \
-device/zte/roamer/root/roamer.ueventd.rc:root/ueventd.roamer.rc \
-device/zte/roamer/root/usbconfig:root/sbin/usbconfig \
-device/zte/roamer/root/usb.conf:root/usb.conf
 
 # etc
 #PRODUCT_COPY_FILES  += \
 #device/zte/roamer/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
 #device/zte/roamer/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt
-
-# modules
-PRODUCT_COPY_FILES += \
-device/zte/roamer/modules/dhd.ko:system/lib/modules/dhd.ko \
-device/zte/roamer/modules/reset_modem.ko:system/lib/modules/reset_modem.ko \
-device/zte/roamer/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
 
 # hardware permissions files
 PRODUCT_COPY_FILES += \
@@ -64,16 +41,16 @@ packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/pe
 
 # libs
 PRODUCT_PACKAGES += \
-	libmm-omxcore \
-	libOmxCore \
-	brcm_patchram_plus \
-	libreference-ril \
-	libstagefrighthw \
-	FM \
+	libfmradio.si4708 \
+	RoamerParts \
 	lights.roamer \
 	gralloc.roamer \
 	copybit.roamer \
 	sensors.roamer \
-	prox_cal
-
+	prox_cal \
+	brcm_patchram_plus \
+	libreference-ril \
+	libstagefrighthw \
+	libmm-omxcore \
+	libOmxCore
 

@@ -1,5 +1,5 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, device/zte/roamer/device_roamer.mk)
+$(call inherit-product, device/zte/roamer/roamer.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 include frameworks/base/data/sounds/AllAudio.mk
@@ -12,10 +12,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.debuggable=1 \
 	ro.persist.service.adb.enable=1
 
-# stayboogy logo and boot animation
-PRODUCT_COPY_FILES += \
-device/zte/roamer/root/initlogo.rle:root/initlogo.rle \
-device/zte/roamer/root/bootanimation.zip:system/media/bootanimation.zip
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.modversion=v2.0c
 
 PRODUCT_NAME := stayboogy_roamer
 PRODUCT_BRAND := zte
@@ -23,6 +21,25 @@ PRODUCT_DEVICE := roamer
 PRODUCT_MODEL := Z990
 PRODUCT_MANUFACTURER := ZTE
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=roamer BUILD_ID=SBG10 BUILD_FINGERPRINT=zte/roamer/stayboogy:2.3.7/SBG10/121341:user/release-keys PRIVATE_BUILD_DESC="roamer-user 2.3.7 SBG10 121341 release-keys"
+
+# stayboogy
+PRODUCT_COPY_FILES += \
+device/zte/roamer/stayboogy/kernel:kernel \
+device/zte/roamer/stayboogy/init.roamer.rc:root/init.roamer.rc \
+device/zte/roamer/stayboogy/roamer.ueventd.rc:root/ueventd.roamer.rc \
+device/zte/roamer/stayboogy/usbconfig:root/sbin/usbconfig \
+device/zte/roamer/stayboogy/initlogo.rle:root/initlogo.rle \
+device/zte/roamer/stayboogy/bootanimation.zip:system/media/bootanimation.zip \
+device/zte/roamer/stayboogy/uinit:system/bin/uinit \
+device/zte/roamer/stayboogy/prox:system/bin/prox \
+device/zte/roamer/stayboogy/user:system/etc/init.d/user \
+device/zte/roamer/stayboogy/gps.conf:system/etc/gps.conf \
+device/zte/roamer/stayboogy/dhd.ko:system/lib/modules/dhd.ko
+
+# google play
+PRODUCT_COPY_FILES += \
+device/zte/roamer/stayboogy/Vending.apk:system/app/Vending.apk \
+device/zte/roamer/stayboogy/GoogleServicesFramework.apk:system/app/GoogleServicesFramework.apk
 
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.sys.themeId = Cyanbread \
@@ -46,7 +63,6 @@ PRODUCT_PACKAGES += \
 ThemeManager \
 ThemeChooser \
 com.tmobile.themes \
-Androidian \
 Cyanbread \
 AndroidTerm \
 FileManager \
@@ -65,3 +81,4 @@ PRODUCT_COPY_FILES += \
 vendor/cyanogen/prebuilt/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/dictionaries
+

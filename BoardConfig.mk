@@ -6,17 +6,17 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_CPU_ABI := armeabi
 TARGET_BOARD_PLATFORM := msm7k
-TARGET_BOARD_PLATFORM_GPU := qcom
+USE_OPENGL_RENDERER := true
 
-# for using stock kernel vmsplit configuration (for stability)
+# for using stock kernel memory config
 TARGET_USES_2G_VM_SPLIT := true
 
-BOARD_EGL_CFG := device/zte/roamer/etc/egl.cfg
+BOARD_EGL_CFG := device/zte/roamer/blobs/egl.cfg
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := roamer
 
-TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
+#TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer/include
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x02600000
 #BOARD_PAGE_SIZE := 0x00000800
@@ -27,7 +27,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0dc00000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0a280000
 BOARD_FLASH_BLOCK_SIZE := 0x00020000
 
-TARGET_PREBUILT_KERNEL := device/zte/roamer/kernel
+TARGET_PREBUILT_KERNEL := device/zte/roamer/stayboogy/kernel
 
 # wifi
 BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
@@ -43,8 +43,6 @@ WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0 firmware_path=/system/etc/
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := si4708
-
-BOARD_USES_QCOM_LIBRPC := true
 
 # bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -69,7 +67,7 @@ TARGET_PROVIDES_LIBAUDIO := true
 #camera
 USE_CAMERA_STUB := true
 
-# usb (dirty) configuration
+# usb configuration
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"

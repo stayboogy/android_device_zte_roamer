@@ -1,12 +1,16 @@
-# zte roamer proprietary blobs
+# proprietary blobs required for the zte roamer
+#
+# lots required to have everything working
+#
 
 # keyfiles
 PRODUCT_COPY_FILES  += \
 device/zte/roamer/blobs/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
 device/zte/roamer/blobs/roamer_keypad.kl:system/usr/keylayout/roamer_keypad.kl
 
-# oe gps parts
+# gps parts
 PRODUCT_COPY_FILES  += \
+device/zte/roamer/blobs/loc_api_app:system/bin/loc_api_app \
 device/zte/roamer/blobs/gps.default.so:system/lib/hw/gps.default.so \
 device/zte/roamer/blobs/libgps.so:system/lib/libgps.so \
 device/zte/roamer/blobs/libloc_api.so:obj/lib/libloc_api.so \
@@ -14,7 +18,6 @@ device/zte/roamer/blobs/libloc_api.so:system/lib/libloc_api.so \
 device/zte/roamer/blobs/libloc_api-rpc-qc.so:system/lib/libloc_api-rpc-qc.so \
 device/zte/roamer/blobs/libloc_ext.so:system/lib/libloc_ext.so \
 device/zte/roamer/blobs/libloc-rpc.so:system/lib/libloc-rpc.so \
-device/zte/roamer/blobs/gps.conf:system/etc/gps.conf \
 device/zte/roamer/blobs/loc_parameter.ini:system/etc/loc_parameter.ini \
 device/zte/roamer/blobs/pointercal:system/etc/pointercal \
 device/zte/roamer/blobs/com.qualcomm.location.vzw_library.jar:system/framework/com.qualcomm.location.vzw_library.jar \
@@ -83,6 +86,45 @@ device/zte/roamer/blobs/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_ad
 device/zte/roamer/blobs/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
 device/zte/roamer/blobs/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so
 
+# omx and opencore
+PRODUCT_COPY_FILES += \
+device/zte/roamer/blobs/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
+device/zte/roamer/blobs/libOmxAacDec.so:system/lib/libOmxAacDec.so \
+device/zte/roamer/blobs/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
+device/zte/roamer/blobs/libOmxAdpcmDec.so:system/lib/libOmxAdpcmDec.so \
+device/zte/roamer/blobs/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
+device/zte/roamer/blobs/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
+device/zte/roamer/blobs/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
+device/zte/roamer/blobs/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
+device/zte/roamer/blobs/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
+device/zte/roamer/blobs/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
+device/zte/roamer/blobs/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \
+device/zte/roamer/blobs/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
+device/zte/roamer/blobs/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
+device/zte/roamer/blobs/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+device/zte/roamer/blobs/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
+device/zte/roamer/blobs/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
+device/zte/roamer/blobs/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
+device/zte/roamer/blobs/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
+device/zte/roamer/blobs/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
+device/zte/roamer/blobs/libOmxQcelpDec.so:system/lib/libOmxQcelpDec.so \
+device/zte/roamer/blobs/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \
+device/zte/roamer/blobs/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
+device/zte/roamer/blobs/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
+device/zte/roamer/blobs/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
+device/zte/roamer/blobs/libopencore_author.so:system/lib/libopencore_author.so \
+device/zte/roamer/blobs/libopencore_common.so:system/lib/libopencore_common.so \
+device/zte/roamer/blobs/libopencore_downloadreg.so:system/lib/libopencore_downloadreg.so \
+device/zte/roamer/blobs/libopencore_download.so:system/lib/libopencore_download.so \
+device/zte/roamer/blobs/libopencorehw.so:system/lib/libopencorehw.so \
+device/zte/roamer/blobs/libopencore_mp4localreg.so:system/lib/libopencore_mp4localreg.so \
+device/zte/roamer/blobs/libopencore_mp4local.so:system/lib/libopencore_mp4local.so \
+device/zte/roamer/blobs/libopencore_net_support.so:system/lib/libopencore_net_support.so \
+device/zte/roamer/blobs/libopencore_player.so:system/lib/libopencore_player.so \
+device/zte/roamer/blobs/libopencore_rtspreg.so:system/lib/libopencore_rtspreg.so \
+device/zte/roamer/blobs/libopencore_rtsp.so:system/lib/libopencore_rtsp.so
+# device/zte/roamer/blobs/libOmxCore.so:system/lib/libOmxCore.so \
+
 # remaining lib blobs
 PRODUCT_COPY_FILES += \
 device/zte/roamer/blobs/libaudioalsa.so:system/lib/libaudioalsa.so \
@@ -131,11 +173,5 @@ device/zte/roamer/blobs/libvdmfumo.so:system/lib/libvdmfumo.so \
 device/zte/roamer/blobs/libwms.so:system/lib/libwms.so \
 device/zte/roamer/blobs/libwmsts.so:system/lib/libwmsts.so \
 device/zte/roamer/blobs/libWVphoneAPI.so:system/lib/libWVphoneAPI.so
-
-
-
-
-
-
 
 
