@@ -29,6 +29,25 @@
 #define u16 unsigned short
 #define u8  unsigned char
 
+// real proximity config from kernel taos source 
+// @stayboogy
+static u32 calibrate_target = 300000;
+static u16 als_time = 27;
+static u16 scale_factor = 1;
+static u16 gain_trim = 5;
+static u8 filter_history = 3;
+static u8 filter_count = 1;
+static u8 gain = 1;
+static u16 prox_threshold_hi = 1023; 
+static u16 prox_threshold_lo = 1023;
+static u8 prox_int_time = 0xF6;
+static u8 prox_adc_time = 0xFF;
+static u8 prox_wait_time = 0xFF;
+static u8 prox_intr_filter = 0x00;
+static u8 prox_config = 0x00;
+static u8 prox_pulse_cnt = 0x10;
+static u8 prox_gain = 0x20;
+
 // device configuration
 struct PS_ALS_cfg {
     u32 calibrate_target;

@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+if [ ! -e /data/misc/prox.txt ]
+then
+prox_cal -c
+fi

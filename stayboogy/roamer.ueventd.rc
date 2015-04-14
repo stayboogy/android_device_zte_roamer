@@ -1,0 +1,45 @@
+/dev/pmem_audio           0660   system     audio
+/dev/oncrpc/*             0660   radio      system
+/dev/msm_voicememo        0660   system     audio
+
+#permissions for video
+/dev/msm_vidc_reg         0660  system       audio
+/dev/msm_vidc_dec         0660  system       audio
+/dev/msm_vidc_enc         0660  system       audio
+
+#permissions for audio
+/dev/msm_amrnb            0660  system       audio
+/dev/msm_amrwb            0660  system       audio
+/dev/msm_aac              0660  system       audio
+/dev/msm_qcelp            0660  system       audio
+/dev/msm_evrc             0660  system       audio
+/dev/msm_fm               0660  system       audio
+/dev/msm_acdb             0660  system       audio
+/dev/msm_wma              0660  system       audio
+/dev/msm_wmapro           0660  system       audio
+/dev/msm_qcelp_in         0660  system       audio
+/dev/msm_evrc_in          0660  system       audio
+
+# TTY nodes
+/dev/ttyHS0		  0600	 bluetooth  bluetooth	
+/dev/ttyCSD0              0660   radio      radio
+/dev/ttySMD0              0660   radio      radio
+/dev/ttyGPS0              0660   system     system
+/dev/ttyGS0               0660   system     system
+/dev/ttyXTRA0             0660   system     system
+/dev/ttyEFS0              0660   system     system
+/dev/ttyCIQ00             0660   system     system
+/dev/ttyCIQ10             0660   system     system
+
+/dev/akm8962_aot           0777   system     system
+/dev/akm8962_dev           0777   system     system
+/dev/oncrpc/*              0660   radio      system
+/dev/msm_camera/*          0660   system     system
+/dev/smdcntl0              0640   radio      radio
+/dev/smdcntl1              0640   radio      radio
+/dev/smdcntl2              0640   radio      radio
+/dev/kgsl-3d0              0666   root       root
+/dev/taos                  0777   root       root
+/dev/ISL                   0777   root       root
+/dev/si4708                0777   root       root
+/dev/msm_preproc_ctl       0660   system     audio
