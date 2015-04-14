@@ -10,6 +10,8 @@ adb pull /system/usr/keylayout/7k_handset.kl
 adb pull /system/usr/keylayout/roamer_keypad.kl
 
 # gps parts
+adb pull /system/bin/loc_api_app
+chmod 777 loc_api_app
 adb pull /system/lib/hw/gps.default.so
 adb pull /system/lib/libgps.so
 adb pull /system/lib/libloc_api.so
@@ -76,6 +78,8 @@ adb pull /system/bin/akmd8962
 chmod 777 akmd8962
 adb pull /system/bin/qmuxd
 chmod 777 qmuxd
+adb pull /system/bin/proximity.init
+chmod 777 proximity.init
 
 # sip and voip
 adb pull /system/etc/permissions/android.software.sip.voip.xml
@@ -136,7 +140,7 @@ adb pull /system/lib/libwms.so
 adb pull /system/lib/libwmsts.so
 adb pull /system/lib/libWVphoneAPI.so
 
-# omx and opencore libs
+# omx and opencore
 adb pull /system/lib/libomx_aacdec_sharedlibrary.so
 adb pull /system/lib/libOmxAacDec.so
 adb pull /system/lib/libOmxAacEnc.so
@@ -171,5 +175,7 @@ adb pull /system/lib/libopencore_mp4localreg.so
 adb pull /system/lib/libopencore_mp4local.so
 adb pull /system/lib/libopencore_net_support.so
 adb pull /system/lib/libopencore_player.so
+adb pull /system/lib/libopencore_rtspreg.so
+adb pull /system/lib/libopencore_rtsp.so
 
 exit
