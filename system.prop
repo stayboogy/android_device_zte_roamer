@@ -1,6 +1,7 @@
 #
 # system.prop for roamer
 #
+ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
 rild.libpath=/system/lib/libril-qc-1.so
 rild.libargs=-d /dev/smd0
 ro.build.baseband_version=Z990B01
