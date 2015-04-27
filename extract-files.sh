@@ -32,14 +32,6 @@ adb pull /system/lib/libril-qcril-hook-oem.so
 adb pull /system/etc/firmware/wlan/cfg.dat
 adb pull /system/etc/firmware/wlan/qcom_cfg.ini
 adb pull /system/etc/firmware/wlan/qcom_fw.bin
-adb pull /system/etc/firmware/yamato_pfp.fw
-adb pull /system/etc/firmware/yamato_pm4.fw
-
-# camera
-adb pull /system/lib/libcamera.so
-adb pull /system/lib/libcamera_client.so
-adb pull /system/lib/libcameraservice.so
-adb pull /system/lib/liboemcamera.so
 
 # wifi
 adb pull /system/etc/fw_4319.bin
@@ -84,13 +76,6 @@ chmod 777 proximity.init
 # sip and voip
 adb pull /system/etc/permissions/android.software.sip.voip.xml
 adb pull /system/etc/permissions/android.software.sip.xml
-
-# egl parts
-adb pull /system/lib/egl/egl.cfg
-adb pull /system/lib/egl/libEGL_adreno200.so
-adb pull /system/lib/egl/libGLESv1_CM_adreno200.so
-adb pull /system/lib/egl/libGLESv2_adreno200.so
-adb pull /system/lib/egl/libq3dtools_adreno200.so
 
 # all the blobs not present after building
 adb pull /system/lib/libaudioalsa.so
@@ -140,32 +125,7 @@ adb pull /system/lib/libwms.so
 adb pull /system/lib/libwmsts.so
 adb pull /system/lib/libWVphoneAPI.so
 
-# omx and opencore libs
-adb pull /system/lib/libomx_aacdec_sharedlibrary.so
-adb pull /system/lib/libOmxAacDec.so
-adb pull /system/lib/libOmxAacEnc.so
-adb pull /system/lib/libOmxAdpcmDec.so
-adb pull /system/lib/libomx_amrdec_sharedlibrary.so
-adb pull /system/lib/libOmxAmrDec.so
-adb pull /system/lib/libomx_amrenc_sharedlibrary.so
-adb pull /system/lib/libOmxAmrEnc.so
-adb pull /system/lib/libOmxAmrRtpDec.so
-adb pull /system/lib/libOmxAmrwbDec.so
-adb pull /system/lib/libomx_avcdec_sharedlibrary.so
-adb pull /system/lib/libOmxCore.so
-adb pull /system/lib/libOmxEvrcDec.so
-adb pull /system/lib/libOmxEvrcEnc.so
-adb pull /system/lib/libOmxH264Dec.so
-adb pull /system/lib/libomx_m4vdec_sharedlibrary.so
-adb pull /system/lib/libomx_mp3dec_sharedlibrary.so
-adb pull /system/lib/libOmxMp3Dec.so
-adb pull /system/lib/libOmxMpeg4Dec.so
-adb pull /system/lib/libOmxQcelp13Enc.so
-adb pull /system/lib/libOmxQcelpDec.so
-adb pull /system/lib/libomx_sharedlibrary.so
-adb pull /system/lib/libOmxVidEnc.so
-adb pull /system/lib/libOmxWmaDec.so
-adb pull /system/lib/libOmxWmvDec.so
+# opencore libs
 adb pull /system/lib/libopencore_author.so
 adb pull /system/lib/libopencore_common.so
 adb pull /system/lib/libopencore_downloadreg.so

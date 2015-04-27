@@ -1,20 +1,12 @@
 DEVICE_PACKAGE_OVERLAYS := device/zte/roamer/overlay
 
+$(call inherit-product, vendor/qcom/msm7x27/qcom-vendor-blobs.mk)
+
 PRODUCT_AAPT_CONFIG += normal mdpi
 PRODUCT_AAPT_PREF_CONFIG += mdpi
 
-LOCAL_KERNEL := device/zte/roamer/kernel
-
 PRODUCT_COPY_FILES += \
-	$(LOCAL_KERNEL):kernel
-
-# ramdisk
-PRODUCT_COPY_FILES += \
-device/zte/roamer/root/init.rc:root/init.rc \
-device/zte/roamer/root/init.roamer.rc:root/init.roamer.rc \
-device/zte/roamer/root/roamer.ueventd.rc:root/ueventd.roamer.rc \
-device/zte/roamer/root/init.roamer.usb.rc:root/init.roamer.usb.rc \
-device/zte/roamer/root/start_usb0.sh:system/etc/start_usb0.sh
+vendor/cm/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # terminal, CM
 PRODUCT_COPY_FILES +=  \
@@ -24,12 +16,12 @@ vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/
 
 # apps
 PRODUCT_PACKAGES += \
-	charger \
-	charger_res_images \
+	LatinIME \
 	CMFileManager \
 	ThemeManager \
 	ThemeChooser \
 	com.tmobile.themes \
+	MusicFX \
 	libcyanogen-dsp \
 	DSPManager \
 	Trebuchet \
@@ -42,16 +34,17 @@ PRODUCT_PACKAGES += \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
-	Basic \
-	MusicFX \
-	audio_effects.conf
+	Basic
 
 # libs
 PRODUCT_PACKAGES += \
+        gralloc.msm7x27 \
+        copybit.msm7x27 \
+        hwcomposer.msm7x27 \
+        libmm-omxcore \
+        libOmxCore \
+        libstagefrighthw \
 	RoamerParts \
-	hwcomposer.roamer \
-	copybit.roamer \
-	gralloc.roamer \
 	lights.roamer \
 	sensors.roamer \
 	prox_cal \
@@ -63,11 +56,11 @@ PRODUCT_PACKAGES += \
 	libaudioutils \
 	libreference-ril \
 	libril \
-	librpc \
-	libstagefrighthw
+	librpc
 
 # permissions
 PRODUCT_COPY_FILES += \
+vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
 frameworks/base/data/etc/com.tmobile.software.themes.xml:/system/etc/permissions/com.tmobile.software.themes.xml \
 packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
 frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
@@ -83,7 +76,4 @@ frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/
 frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
-
-
-
 

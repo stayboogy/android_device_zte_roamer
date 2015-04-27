@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/roamer.mk
+    $(LOCAL_DIR)/stayboogy_roamer.mk
