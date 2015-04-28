@@ -1,0 +1,3706 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    
+    
+    <title>performance: Add Performance class · cjluo/frameworks_base@4849e25 · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="performance: Add Performance class · cjluo/frameworks_base@4849e25" name="twitter:title"><meta content="New Performance class to allow system CPU control
+
+Change-Id: Ie476aefcec7fc20cab8d747ef7c3994b26fcbb62" name="twitter:description"><meta content="https://2.gravatar.com/avatar/20dff69c48d21f2d44c5c2138d376285?d=https%3A%2F%2Fassets-cdn.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png&amp;r=x&amp;s=200" name="twitter:image:src">
+      <meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="https://2.gravatar.com/avatar/20dff69c48d21f2d44c5c2138d376285?d=https%3A%2F%2Fassets-cdn.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png&amp;r=x&amp;s=200" property="og:image"><meta content="performance: Add Performance class · cjluo/frameworks_base@4849e25" property="og:title"><meta content="https://github.com/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174" property="og:url"><meta content="New Performance class to allow system CPU control
+
+Change-Id: Ie476aefcec7fc20cab8d747ef7c3994b26fcbb62" property="og:description"><meta content="1320958809" property="og:updated_time">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_commits" data-pjax-transient="">
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="A2E09191:1FF2:3FCCC0B:553D20F2" name="octolytics-dimension-request_id">
+    
+    <meta content="Rails, view, commit#show" name="analytics-event">
+    <meta class="js-ga-set" name="dimension1" content="Logged Out">
+    <meta class="js-ga-set" name="dimension2" content="Header v3">
+    <meta name="is-dotcom" content="true">
+    <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+    
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="cZQmzmSAmKddYDEhnRd3EJaafZasGNhcGuuKoAD2kuuXs2q5nI58zniz5dKXIbQ5WRDdW+rU9eY+oWZiSoaVAg==" name="csrf-token">
+
+    <link href="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/github-99a212f30ce9bafd05712fa4c5c5de4e89c6c27396c34f6458dea.css" media="all" rel="stylesheet">
+    <link href="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/github2-b21c331cc5a9542882fc1f4e2cf08c371d7e52473ffc1017b2b6.css" media="all" rel="stylesheet">
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="380e0b7c2b581631835a2841991e7107">
+
+        <link data-pjax-transient="true" href="https://github.com/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174.diff" rel="alternate" type="text/plain+diff">
+  <link data-pjax-transient="true" href="https://github.com/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174.patch" rel="alternate" type="text/plain+patch">
+
+  <meta name="diff-view" content="unified" data-pjax-transient="">
+
+  <meta name="description" content="Contribute to frameworks_base development by creating an account on GitHub.">
+  <meta name="go-import" content="github.com/cjluo/frameworks_base git https://github.com/cjluo/frameworks_base.git">
+
+  <meta content="2498253" name="octolytics-dimension-user_id"><meta content="cjluo" name="octolytics-dimension-user_login"><meta content="9988474" name="octolytics-dimension-repository_id"><meta content="cjluo/frameworks_base" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="9988474" name="octolytics-dimension-repository_network_root_id"><meta content="cjluo/frameworks_base" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/cjluo/frameworks_base/commits/4849e25131ae6fdaa6ac1129f7109791eb3f8174.atom" rel="alternate" title="Recent Commits to frameworks_base:4849e25131ae6fdaa6ac1129f7109791eb3f8174" type="application/atom+xml">
+
+  <script src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/api.js" async="" type="text/javascript"></script></head>
+
+
+  <body class="logged_out  env-production linux vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+
+
+        
+        <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="https://github.com/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="https://github.com/login?return_to=%2Fcjluo%2Fframeworks_base%2Fcommit%2F4849e25131ae6fdaa6ac1129f7109791eb3f8174" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <form accept-charset="UTF-8" action="/cjluo/frameworks_base/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/cjluo/frameworks_base/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+  <input class="js-site-search-field is-clearable" data-hotkey="s" name="q" placeholder="Search" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off" type="text">
+  <div class="scope-badge">This repository</div>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fcjluo%2Fframeworks_base" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="https://github.com/cjluo/frameworks_base/watchers">
+    1
+  </a>
+
+  </li>
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Fcjluo%2Fframeworks_base" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="https://github.com/cjluo/frameworks_base/stargazers">
+      0
+    </a>
+
+  </li>
+
+    <li>
+      <a href="https://github.com/login?return_to=%2Fcjluo%2Fframeworks_base" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+      <a href="https://github.com/cjluo/frameworks_base/network" class="social-count">
+        0
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="https://github.com/cjluo" class="url fn" itemprop="url" rel="author"><span itemprop="title">cjluo</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="https://github.com/cjluo/frameworks_base" class="js-current-repository" data-pjax="#js-repo-pjax-container">frameworks_base</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62.gif" height="16" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline">
+        <div class="repository-sidebar clearfix">
+            
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container" data-issue-count-url="/cjluo/frameworks_base/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="https://github.com/cjluo/frameworks_base" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /cjluo/frameworks_base">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62.gif" height="16" width="16">
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="https://github.com/cjluo/frameworks_base/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /cjluo/frameworks_base/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="js-issue-replace-counter"></span>
+          <img alt="" class="mini-loader" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62.gif" height="16" width="16">
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="https://github.com/cjluo/frameworks_base/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /cjluo/frameworks_base/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="js-pull-replace-counter"></span>
+          <img alt="" class="mini-loader" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62.gif" height="16" width="16">
+</a>    </li>
+
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="https://github.com/cjluo/frameworks_base/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /cjluo/frameworks_base/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62.gif" height="16" width="16">
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="https://github.com/cjluo/frameworks_base/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /cjluo/frameworks_base/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62.gif" height="16" width="16">
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+                  
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/cjluo/frameworks_base.git" readonly="readonly" type="text">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input class="input-mini input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/cjluo/frameworks_base" readonly="readonly" type="text">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+  <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a> or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+
+
+
+                <a href="https://github.com/cjluo/frameworks_base/archive/4849e25131ae6fdaa6ac1129f7109791eb3f8174.zip" class="btn btn-sm sidebar-button" aria-label="Download the contents of cjluo/frameworks_base as a zip file" title="Download the contents of cjluo/frameworks_base as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+<a href="https://github.com/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+
+
+
+<div class="commit full-commit ">
+  <a href="https://github.com/cjluo/frameworks_base/tree/4849e25131ae6fdaa6ac1129f7109791eb3f8174" class="btn btn-outline right" title="Browse the repository at this point in the history" rel="nofollow">Browse files</a>
+
+    <p class="commit-title">
+      performance: Add Performance class
+    </p>
+
+    <div class="commit-desc"><pre>New Performance class to allow system CPU control
+
+Change-Id: Ie476aefcec7fc20cab8d747ef7c3994b26fcbb62</pre></div>
+
+  <div class="commit-branches">
+    
+
+    <span class="octicon octicon-git-branch"></span>
+    <ul class="branches-list">
+        <li class="branch"><a href="https://github.com/cjluo/frameworks_base">cm-9.1.0</a></li>
+    </ul>
+  </div>
+
+  <div class="commit-meta clearfix">
+    <span class="sha-block">commit <span class="sha js-selectable-text">4849e25131ae6fdaa6ac1129f7109791eb3f8174</span></span>
+
+    <span class="sha-block" data-pjax="">
+      1 parent
+        
+        <a href="https://github.com/cjluo/frameworks_base/commit/fababf511b11a0a4d8007865fc93fef88e707ed9" class="sha" data-hotkey="p">fababf5</a>
+    </span>
+
+    <div class="authorship">
+      <img alt="" class="avatar" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/20dff69c48d21f2d44c5c2138d376285.png" height="24" width="24">
+      <span class="author-name"><span>David Ng</span></span>
+      
+      authored <time title="Thu 10 Nov 2011 03:00:09 PM CST" datetime="2011-11-10T21:00:09Z" is="relative-time">on Nov 10, 2011</time>
+
+        <span class="committer">
+          <span class="author-name"><span class="octicon octicon-arrow-right"></span> <a href="https://github.com/Kali-" rel="contributor">Kali-</a></span>
+          
+          committed <time title="Fri 23 Mar 2012 04:45:42 PM CDT" datetime="2012-03-23T21:45:42Z" is="relative-time">on Mar 23, 2012</time>
+        </span>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <a name="diff-stat"></a>
+    
+<div id="toc" class="details-collapse table-of-contents js-details-container">
+  <div class="btn-group right" data-ga-load="Diff, view, Viewed Unified Diff">
+  <a class="btn btn-sm selected" href="https://github.com/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174?diff=unified">
+    Unified
+  </a>
+  <a class="btn btn-sm" href="https://github.com/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174?diff=split">
+    Split
+  </a>
+</div>
+
+
+  <div class="toc-diff-stats">
+    <span class="octicon octicon-diff"></span>
+    Showing
+    <button type="button" class="btn-link js-details-target">
+      4 changed files
+    </button>
+    with
+    <strong>210 additions</strong>
+    and <strong>1 deletion</strong>.
+  </div>
+
+  <ol class="content collapse js-transitionable">
+    <li>
+      <span class="diffstat right">
+          <span class="text-diff-added">
+            +54
+          </span>
+          <span class="text-diff-deleted">
+            −0
+          </span>
+          <a href="#diff-6e6e110942b4314eef67d14e1de3f8de" class="tooltipped tooltipped-s" aria-label="54 lines changed">
+            <span class="diffstat-bar">
+              <span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span>
+            </span>
+          </a>
+      </span>
+      <span class="octicon octicon-diff-added" title="added"></span>
+      <a href="#diff-6e6e110942b4314eef67d14e1de3f8de">core/java/org/codeaurora/Performance.java</a>
+    </li>
+    <li>
+      <span class="diffstat right">
+          <span class="text-diff-added">
+            +6
+          </span>
+          <span class="text-diff-deleted">
+            −1
+          </span>
+          <a href="#diff-0d3d55a701d46a7e363d1a4466c76a2c" class="tooltipped tooltipped-s" aria-label="7 lines changed">
+            <span class="diffstat-bar">
+              <span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span>
+            </span>
+          </a>
+      </span>
+      <span class="octicon octicon-diff-modified" title="modified"></span>
+      <a href="#diff-0d3d55a701d46a7e363d1a4466c76a2c">core/jni/Android.mk</a>
+    </li>
+    <li>
+      <span class="diffstat right">
+          <span class="text-diff-added">
+            +7
+          </span>
+          <span class="text-diff-deleted">
+            −0
+          </span>
+          <a href="#diff-cc8de8214e04b1571d665a8ef7fdc613" class="tooltipped tooltipped-s" aria-label="7 lines changed">
+            <span class="diffstat-bar">
+              <span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span>
+            </span>
+          </a>
+      </span>
+      <span class="octicon octicon-diff-modified" title="modified"></span>
+      <a href="#diff-cc8de8214e04b1571d665a8ef7fdc613">core/jni/AndroidRuntime.cpp</a>
+    </li>
+    <li>
+      <span class="diffstat right">
+          <span class="text-diff-added">
+            +143
+          </span>
+          <span class="text-diff-deleted">
+            −0
+          </span>
+          <a href="#diff-5197ddf021b1687ac1f61d8ad05c22f2" class="tooltipped tooltipped-s" aria-label="143 lines changed">
+            <span class="diffstat-bar">
+              <span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span>
+            </span>
+          </a>
+      </span>
+      <span class="octicon octicon-diff-added" title="added"></span>
+      <a href="#diff-5197ddf021b1687ac1f61d8ad05c22f2">core/jni/org_codeaurora_Performance.cpp</a>
+    </li>
+  </ol>
+</div>
+
+  <div id="files" class="diff-view ">
+      <a name="diff-6e6e110942b4314eef67d14e1de3f8de"></a>
+      <div id="diff-0" class="file js-details-container
+                   
+                   
+                   
+                   
+                   show-inline-notes
+                 ">
+        <div class="file-header" data-path="core/java/org/codeaurora/Performance.java">
+          <div class="file-actions">
+              <span class="show-file-notes">
+                <label>
+                  <input checked="checked" class="js-toggle-file-notes" type="checkbox">
+                  Show notes
+                </label>
+              </span>
+
+                <a href="https://github.com/cjluo/frameworks_base/blob/4849e25131ae6fdaa6ac1129f7109791eb3f8174/core/java/org/codeaurora/Performance.java" class="btn btn-sm tooltipped tooltipped-n" rel="nofollow" aria-label="View the whole file at version 4849e25 ">View</a>
+
+
+          </div>
+          <div class="file-info">
+              <span class="diffstat tooltipped tooltipped-e" aria-label="54 additions &amp; 0 deletions">54 <span class="diffstat-bar"><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span></span></span>
+
+            <span class="js-selectable-text" title="core/java/org/codeaurora/Performance.java">
+              core/java/org/codeaurora/Performance.java
+            </span>
+            
+          </div>
+        </div>
+
+            <div class="data highlight blob-wrapper">
+              <table class="diff-table  tab-size-8 ">
+                
+      <tbody><tr data-position="0">
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deL-1" class="blob-num blob-num-hunk non-expandable" data-line-number="..."></td>
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR0" class="blob-num blob-num-hunk non-expandable" data-line-number="..."></td>
+    <td class="blob-code blob-code-inner blob-code-hunk">@@ -0,0 +1,54 @@</td>
+  </tr>
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR1" data-line-number="1" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c">/*</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR2" data-line-number="2" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * Copyright (c) 2011, Code Aurora Forum. All rights reserved.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR3" data-line-number="3" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR4" data-line-number="4" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * Redistribution and use in source and binary forms, with or without</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR5" data-line-number="5" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * modification, are permitted provided that the following conditions are met:</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR6" data-line-number="6" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *    * Redistributions of source code must retain the above copyright</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR7" data-line-number="7" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      notice, this list of conditions and the following disclaimer.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR8" data-line-number="8" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *    * Redistributions in binary form must reproduce the above copyright</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR9" data-line-number="9" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      notice, this list of conditions and the following disclaimer in the</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR10" data-line-number="10" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      documentation and/or other materials provided with the distribution.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR11" data-line-number="11" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *    * Neither the name of Code Aurora nor</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR12" data-line-number="12" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      the names of its contributors may be used to endorse or promote</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR13" data-line-number="13" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      products derived from this software without specific prior written</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR14" data-line-number="14" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      permission.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR15" data-line-number="15" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR16" data-line-number="16" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR17" data-line-number="17" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR18" data-line-number="18" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR19" data-line-number="19" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR20" data-line-number="20" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR21" data-line-number="21" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR22" data-line-number="22" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR23" data-line-number="23" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR24" data-line-number="24" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR25" data-line-number="25" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR26" data-line-number="26" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR27" data-line-number="27" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR28" data-line-number="28" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR29" data-line-number="29" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">package</span> <span class="pl-smi">org.codeaurora</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR30" data-line-number="30" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR31" data-line-number="31" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">import</span> <span class="pl-smi">android.util.Log</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR32" data-line-number="32" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR33" data-line-number="33" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Performance</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR34" data-line-number="34" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+{</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR35" data-line-number="35" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">final</span> <span class="pl-smi">String</span> <span class="pl-c1">TAG</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Perf<span class="pl-pds">"</span></span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR36" data-line-number="36" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR37" data-line-number="37" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c">/** &amp;hide */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR38" data-line-number="38" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">public</span> <span class="pl-en">Performance</span>() {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR39" data-line-number="39" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-c">//Log.d(TAG, "Perf module initialized");</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR40" data-line-number="40" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR41" data-line-number="41" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR42" data-line-number="42" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c">/** &amp;hide */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR43" data-line-number="43" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">protected</span> <span class="pl-k">void</span> <span class="pl-en">finalize</span>() {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR44" data-line-number="44" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        native_deinit();</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR45" data-line-number="45" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR46" data-line-number="46" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR47" data-line-number="47" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c">/** &amp;hide */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR48" data-line-number="48" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">cpuBoost</span>(<span class="pl-k">int</span> <span class="pl-v">ntasks</span>) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR49" data-line-number="49" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        native_cpu_boost(ntasks);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR50" data-line-number="50" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR51" data-line-number="51" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR52" data-line-number="52" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">private</span> <span class="pl-k">native</span> <span class="pl-k">void</span> <span class="pl-en">native_cpu_boost</span>(<span class="pl-k">int</span> <span class="pl-v">ntasks</span>);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR53" data-line-number="53" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">private</span> <span class="pl-k">native</span> <span class="pl-k">void</span> <span class="pl-en">native_deinit</span>();</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-6e6e110942b4314eef67d14e1de3f8deR54" data-line-number="54" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+}</span>
+
+  </td>
+</tr>
+
+
+
+              </tbody></table>
+            </div>
+      </div>
+      <a name="diff-0d3d55a701d46a7e363d1a4466c76a2c"></a>
+      <div id="diff-1" class="file js-details-container
+                   
+                   
+                   
+                   
+                   show-inline-notes
+                 ">
+        <div class="file-header" data-path="core/jni/Android.mk">
+          <div class="file-actions">
+              <span class="show-file-notes">
+                <label>
+                  <input checked="checked" class="js-toggle-file-notes" type="checkbox">
+                  Show notes
+                </label>
+              </span>
+
+                <a href="https://github.com/cjluo/frameworks_base/blob/4849e25131ae6fdaa6ac1129f7109791eb3f8174/core/jni/Android.mk" class="btn btn-sm tooltipped tooltipped-n" rel="nofollow" aria-label="View the whole file at version 4849e25 ">View</a>
+
+
+          </div>
+          <div class="file-info">
+              <span class="diffstat tooltipped tooltipped-e" aria-label="6 additions &amp; 1 deletion">7 <span class="diffstat-bar"><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span></span></span>
+
+            <span class="js-selectable-text" title="core/jni/Android.mk">
+              core/jni/Android.mk
+            </span>
+            
+          </div>
+        </div>
+
+            <div class="data highlight blob-wrapper">
+              <table class="diff-table  tab-size-8 ">
+                
+      <tbody><tr class="js-expandable-line" data-position="0">
+    <td class="blob-num blob-num-expandable" colspan="2">
+      <a href="#diff-0d3d55a701d46a7e363d1a4466c76a2c" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/cjluo/frameworks_base/blob_excerpt/3902a645f3a65547cbf7eacb1e5fc37bbb45bbf8?diff=unified&amp;left_hunk_size=7&amp;mode=100755&amp;next_line_num_left=155&amp;next_line_num_right=155&amp;path=core%2Fjni%2FAndroid.mk&amp;prev_line_num_left=&amp;prev_line_num_right=&amp;right_hunk_size=12" data-left-range="1-154" data-right-range="1-154">
+        <span class="octicon octicon-unfold"></span>
+      </a>
+    </td>
+    <td class="blob-code blob-code-inner blob-code-hunk">@@ -155,7 +155,12 @@ LOCAL_SRC_FILES:= \</td>
+  </tr>
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL155" data-line-number="155" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR155" data-line-number="155" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> 	android_app_backup_FullBackup.cpp <span class="pl-cce">\</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL156" data-line-number="156" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR156" data-line-number="156" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> 	android_content_res_ObbScanner.cpp <span class="pl-cce">\</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL157" data-line-number="157" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR157" data-line-number="157" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> 	android_content_res_Configuration.cpp <span class="pl-cce">\</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL158" data-line-number="158" class="blob-num blob-num-deletion js-linkable-line-number"></td>
+
+    <td class="blob-num blob-num-deletion empty-cell"></td>
+
+  <td class="blob-code blob-code-deletion">
+
+    <span class="blob-code-inner">-    android_animation_PropertyValuesHolder.cpp</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR158" data-line-number="158" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        android_animation_PropertyValuesHolder.cpp</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR159" data-line-number="159" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR160" data-line-number="160" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">ifeq</span> (<span class="pl-s">$(<span class="pl-smi">BOARD_USES_QCOM_HARDWARE</span>)</span>,true)</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR161" data-line-number="161" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-smi">LOCAL_CFLAGS</span> += -DQCOM_HARDWARE</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR162" data-line-number="162" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+	LOCAL_SRC_FILES += org_codeaurora_Performance.cpp</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR163" data-line-number="163" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">endif</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL159" data-line-number="159" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR164" data-line-number="164" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> </span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL160" data-line-number="160" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR165" data-line-number="165" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> <span class="pl-smi">LOCAL_C_INCLUDES</span> += <span class="pl-cce">\</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cL161" data-line-number="161" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-0d3d55a701d46a7e363d1a4466c76a2cR166" data-line-number="166" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> 	<span class="pl-s">$(<span class="pl-smi">JNI_H_INCLUDE</span>)</span> <span class="pl-cce">\</span></span>
+
+  </td>
+</tr>
+
+
+  <tr class="js-expandable-line">
+   <td class="blob-num blob-num-expandable" colspan="2">
+     <a href="#diff-0d3d55a701d46a7e363d1a4466c76a2c" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/cjluo/frameworks_base/blob_excerpt/3902a645f3a65547cbf7eacb1e5fc37bbb45bbf8?diff=unified&amp;mode=100755&amp;path=core%2Fjni%2FAndroid.mk&amp;prev_line_num_left=161&amp;prev_line_num_right=166" data-left-range="162-266" data-right-range="167-266">
+       <span class="octicon octicon-unfold"></span>
+     </a>
+   </td>
+   <td class="blob-code blob-code-expandable"></td>
+  </tr>
+
+              </tbody></table>
+            </div>
+      </div>
+      <a name="diff-cc8de8214e04b1571d665a8ef7fdc613"></a>
+      <div id="diff-2" class="file js-details-container
+                   
+                   
+                   
+                   
+                   show-inline-notes
+                 ">
+        <div class="file-header" data-path="core/jni/AndroidRuntime.cpp">
+          <div class="file-actions">
+              <span class="show-file-notes">
+                <label>
+                  <input checked="checked" class="js-toggle-file-notes" type="checkbox">
+                  Show notes
+                </label>
+              </span>
+
+                <a href="https://github.com/cjluo/frameworks_base/blob/4849e25131ae6fdaa6ac1129f7109791eb3f8174/core/jni/AndroidRuntime.cpp" class="btn btn-sm tooltipped tooltipped-n" rel="nofollow" aria-label="View the whole file at version 4849e25 ">View</a>
+
+
+          </div>
+          <div class="file-info">
+              <span class="diffstat tooltipped tooltipped-e" aria-label="7 additions &amp; 0 deletions">7 <span class="diffstat-bar"><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span></span></span>
+
+            <span class="js-selectable-text" title="core/jni/AndroidRuntime.cpp">
+              core/jni/AndroidRuntime.cpp
+            </span>
+            
+          </div>
+        </div>
+
+            <div class="data highlight blob-wrapper">
+              <table class="diff-table  tab-size-8 ">
+                
+      <tbody><tr class="js-expandable-line" data-position="0">
+    <td class="blob-num blob-num-expandable" colspan="2">
+      <a href="#diff-cc8de8214e04b1571d665a8ef7fdc613" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/cjluo/frameworks_base/blob_excerpt/b5a6b37e76ed7974acb2be67e24ba84536390de7?diff=unified&amp;left_hunk_size=6&amp;mode=100644&amp;next_line_num_left=177&amp;next_line_num_right=177&amp;path=core%2Fjni%2FAndroidRuntime.cpp&amp;prev_line_num_left=&amp;prev_line_num_right=&amp;right_hunk_size=9" data-left-range="1-176" data-right-range="1-176">
+        <span class="octicon octicon-unfold"></span>
+      </a>
+    </td>
+    <td class="blob-code blob-code-inner blob-code-hunk">@@ -177,6 +177,9 @@ extern int register_android_content_res_ObbScanner(JNIEnv* env);</td>
+  </tr>
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L177" data-line-number="177" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R177" data-line-number="177" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> <span class="pl-k">extern</span> <span class="pl-k">int</span> <span class="pl-en">register_android_content_res_Configuration</span>(JNIEnv* env);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L178" data-line-number="178" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R178" data-line-number="178" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> <span class="pl-k">extern</span> <span class="pl-k">int</span> <span class="pl-en">register_android_animation_PropertyValuesHolder</span>(JNIEnv *env);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L179" data-line-number="179" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R179" data-line-number="179" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> <span class="pl-k">extern</span> <span class="pl-k">int</span> <span class="pl-en">register_com_android_internal_content_NativeLibraryHelper</span>(JNIEnv *env);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R180" data-line-number="180" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">ifdef</span> QCOM_HARDWARE</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R181" data-line-number="181" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">extern</span> <span class="pl-k">int</span> <span class="pl-en">register_org_codeaurora_Performance</span>(JNIEnv *env);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R182" data-line-number="182" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">endif</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L180" data-line-number="180" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R183" data-line-number="183" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> </span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L181" data-line-number="181" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R184" data-line-number="184" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> <span class="pl-k">static</span> AndroidRuntime* <span class="pl-smi">gCurRuntime</span> = <span class="pl-c1">NULL</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L182" data-line-number="182" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R185" data-line-number="185" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> </span>
+
+  </td>
+</tr>
+
+
+      <tr class="js-expandable-line" data-position="10">
+    <td class="blob-num blob-num-expandable" colspan="2">
+      <a href="#diff-cc8de8214e04b1571d665a8ef7fdc613" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/cjluo/frameworks_base/blob_excerpt/b5a6b37e76ed7974acb2be67e24ba84536390de7?diff=unified&amp;left_hunk_size=6&amp;mode=100644&amp;next_line_num_left=1203&amp;next_line_num_right=1206&amp;path=core%2Fjni%2FAndroidRuntime.cpp&amp;prev_line_num_left=182&amp;prev_line_num_right=185&amp;right_hunk_size=10" data-left-range="183-1202" data-right-range="186-1205">
+        <span class="octicon octicon-unfold"></span>
+      </a>
+    </td>
+    <td class="blob-code blob-code-inner blob-code-hunk">@@ -1203,6 +1206,10 @@ static const RegJNIRec gRegJNI[] = {</td>
+  </tr>
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L1203" data-line-number="1203" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1206" data-line-number="1206" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> </span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L1204" data-line-number="1204" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1207" data-line-number="1207" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner">     <span class="pl-c1">REG_JNI</span>(register_android_animation_PropertyValuesHolder),</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L1205" data-line-number="1205" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1208" data-line-number="1208" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner">     <span class="pl-c1">REG_JNI</span>(register_com_android_internal_content_NativeLibraryHelper),</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1209" data-line-number="1209" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1210" data-line-number="1210" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">ifdef</span> QCOM_HARDWARE</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1211" data-line-number="1211" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c1">REG_JNI</span>(register_org_codeaurora_Performance),</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1212" data-line-number="1212" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">endif</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L1206" data-line-number="1206" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1213" data-line-number="1213" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> };</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L1207" data-line-number="1207" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1214" data-line-number="1214" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> </span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613L1208" data-line-number="1208" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+    <td id="diff-cc8de8214e04b1571d665a8ef7fdc613R1215" data-line-number="1215" class="blob-num blob-num-context js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-context">
+
+    <span class="blob-code-inner"> <span class="pl-c">/*</span></span>
+
+  </td>
+</tr>
+
+
+  <tr class="js-expandable-line">
+   <td class="blob-num blob-num-expandable" colspan="2">
+     <a href="#diff-cc8de8214e04b1571d665a8ef7fdc613" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/cjluo/frameworks_base/blob_excerpt/b5a6b37e76ed7974acb2be67e24ba84536390de7?diff=unified&amp;mode=100644&amp;path=core%2Fjni%2FAndroidRuntime.cpp&amp;prev_line_num_left=1208&amp;prev_line_num_right=1215" data-left-range="1209-1270" data-right-range="1216-1270">
+       <span class="octicon octicon-unfold"></span>
+     </a>
+   </td>
+   <td class="blob-code blob-code-expandable"></td>
+  </tr>
+
+              </tbody></table>
+            </div>
+      </div>
+      <a name="diff-5197ddf021b1687ac1f61d8ad05c22f2"></a>
+      <div id="diff-3" class="file js-details-container
+                   
+                   
+                   
+                   
+                   show-inline-notes
+                 ">
+        <div class="file-header" data-path="core/jni/org_codeaurora_Performance.cpp">
+          <div class="file-actions">
+              <span class="show-file-notes">
+                <label>
+                  <input checked="checked" class="js-toggle-file-notes" type="checkbox">
+                  Show notes
+                </label>
+              </span>
+
+                <a href="https://github.com/cjluo/frameworks_base/blob/4849e25131ae6fdaa6ac1129f7109791eb3f8174/core/jni/org_codeaurora_Performance.cpp" class="btn btn-sm tooltipped tooltipped-n" rel="nofollow" aria-label="View the whole file at version 4849e25 ">View</a>
+
+
+          </div>
+          <div class="file-info">
+              <span class="diffstat tooltipped tooltipped-e" aria-label="143 additions &amp; 0 deletions">143 <span class="diffstat-bar"><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span><span class="text-diff-added"></span></span></span>
+
+            <span class="js-selectable-text" title="core/jni/org_codeaurora_Performance.cpp">
+              core/jni/org_codeaurora_Performance.cpp
+            </span>
+            
+          </div>
+        </div>
+
+            <div class="data highlight blob-wrapper">
+              <table class="diff-table  tab-size-8 ">
+                
+      <tbody><tr data-position="0">
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2L-1" class="blob-num blob-num-hunk non-expandable" data-line-number="..."></td>
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R0" class="blob-num blob-num-hunk non-expandable" data-line-number="..."></td>
+    <td class="blob-code blob-code-inner blob-code-hunk">@@ -0,0 +1,143 @@</td>
+  </tr>
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R1" data-line-number="1" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c">/*</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R2" data-line-number="2" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * Copyright (c) 2011, Code Aurora Forum. All rights reserved.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R3" data-line-number="3" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R4" data-line-number="4" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * Redistribution and use in source and binary forms, with or without</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R5" data-line-number="5" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * modification, are permitted provided that the following conditions are met:</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R6" data-line-number="6" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *    * Redistributions of source code must retain the above copyright</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R7" data-line-number="7" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      notice, this list of conditions and the following disclaimer.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R8" data-line-number="8" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *    * Redistributions in binary form must reproduce the above copyright</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R9" data-line-number="9" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      notice, this list of conditions and the following disclaimer in the</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R10" data-line-number="10" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      documentation and/or other materials provided with the distribution.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R11" data-line-number="11" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *    * Neither the name of Code Aurora nor</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R12" data-line-number="12" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      the names of its contributors may be used to endorse or promote</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R13" data-line-number="13" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      products derived from this software without specific prior written</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R14" data-line-number="14" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *      permission.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R15" data-line-number="15" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> *</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R16" data-line-number="16" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R17" data-line-number="17" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R18" data-line-number="18" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R19" data-line-number="19" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R20" data-line-number="20" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R21" data-line-number="21" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R22" data-line-number="22" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R23" data-line-number="23" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R24" data-line-number="24" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R25" data-line-number="25" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R26" data-line-number="26" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R27" data-line-number="27" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c"> */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R28" data-line-number="28" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R29" data-line-number="29" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">define</span> <span class="pl-en">LOG_TAG</span> <span class="pl-s"><span class="pl-pds">"</span>ANDR-PERF-JNI<span class="pl-pds">"</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R30" data-line-number="30" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R31" data-line-number="31" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">"</span>jni.h<span class="pl-pds">"</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R32" data-line-number="32" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">"</span>JNIHelp.h<span class="pl-pds">"</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R33" data-line-number="33" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>android_runtime/AndroidRuntime.h<span class="pl-pds">&gt;</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R34" data-line-number="34" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R35" data-line-number="35" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>dlfcn.h<span class="pl-pds">&gt;</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R36" data-line-number="36" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>limits.h<span class="pl-pds">&gt;</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R37" data-line-number="37" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>string.h<span class="pl-pds">&gt;</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R38" data-line-number="38" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R39" data-line-number="39" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cutils/properties.h<span class="pl-pds">&gt;</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R40" data-line-number="40" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>utils/Log.h<span class="pl-pds">&gt;</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R41" data-line-number="41" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R42" data-line-number="42" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+#<span class="pl-k">define</span> <span class="pl-en">LIBRARY_PATH_PREFIX</span>	<span class="pl-s"><span class="pl-pds">"</span>/system/lib/<span class="pl-pds">"</span></span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R43" data-line-number="43" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R44" data-line-number="44" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">namespace</span> <span class="pl-en">android</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R45" data-line-number="45" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+{</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R46" data-line-number="46" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R47" data-line-number="47" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c">// ----------------------------------------------------------------------------</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R48" data-line-number="48" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R49" data-line-number="49" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">static</span> <span class="pl-en">void</span> (*cpu_boost)(<span class="pl-k">int</span>) = NULL;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R50" data-line-number="50" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">static</span> <span class="pl-k">void</span> *dlhandle         = <span class="pl-c1">NULL</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R51" data-line-number="51" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R52" data-line-number="52" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c">// ----------------------------------------------------------------------------</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R53" data-line-number="53" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R54" data-line-number="54" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">static</span> <span class="pl-k">void</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R55" data-line-number="55" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-en">org_codeaurora_performance_native_init</span>()</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R56" data-line-number="56" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+{</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R57" data-line-number="57" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">const</span> <span class="pl-k">char</span> *rc;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R58" data-line-number="58" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c1">void</span> (*init)(<span class="pl-k">void</span>);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R59" data-line-number="59" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">char</span> buf[PROPERTY_VALUE_MAX];</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R60" data-line-number="60" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">int</span> len;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R61" data-line-number="61" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R62" data-line-number="62" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c">/* Retrieve name of vendor extension library */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R63" data-line-number="63" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> (<span class="pl-c1">property_get</span>(<span class="pl-s"><span class="pl-pds">"</span>ro.vendor.extension_library<span class="pl-pds">"</span></span>, buf, <span class="pl-c1">NULL</span>) &lt;= <span class="pl-c1">0</span>) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R64" data-line-number="64" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-k">return</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R65" data-line-number="65" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R66" data-line-number="66" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R67" data-line-number="67" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c">/* Sanity check - ensure */</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R68" data-line-number="68" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    buf[PROPERTY_VALUE_MAX-<span class="pl-c1">1</span>] = <span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\0</span><span class="pl-pds">'</span></span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R69" data-line-number="69" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> ((<span class="pl-c1">strncmp</span>(buf, LIBRARY_PATH_PREFIX, <span class="pl-k">sizeof</span>(LIBRARY_PATH_PREFIX) - <span class="pl-c1">1</span>) != <span class="pl-c1">0</span>)</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R70" data-line-number="70" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        ||</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R71" data-line-number="71" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        (<span class="pl-c1">strstr</span>(buf, <span class="pl-s"><span class="pl-pds">"</span>..<span class="pl-pds">"</span></span>) != <span class="pl-c1">NULL</span>)) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R72" data-line-number="72" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-k">return</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R73" data-line-number="73" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R74" data-line-number="74" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R75" data-line-number="75" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    dlhandle = <span class="pl-c1">dlopen</span>(buf, RTLD_NOW | RTLD_LOCAL);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R76" data-line-number="76" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> (dlhandle == <span class="pl-c1">NULL</span>) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R77" data-line-number="77" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-k">return</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R78" data-line-number="78" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R79" data-line-number="79" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R80" data-line-number="80" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c1">dlerror</span>();</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R81" data-line-number="81" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R82" data-line-number="82" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    *(<span class="pl-k">void</span> **) (&amp;cpu_boost) = <span class="pl-c1">dlsym</span>(dlhandle, <span class="pl-s"><span class="pl-pds">"</span>perf_cpu_boost<span class="pl-pds">"</span></span>);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R83" data-line-number="83" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> ((rc = <span class="pl-c1">dlerror</span>()) != <span class="pl-c1">NULL</span>) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R84" data-line-number="84" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-k">goto</span> cleanup;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R85" data-line-number="85" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R86" data-line-number="86" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    *(<span class="pl-k">void</span> **) (&amp;init) = <span class="pl-c1">dlsym</span>(dlhandle, <span class="pl-s"><span class="pl-pds">"</span>libqc_opt_init<span class="pl-pds">"</span></span>);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R87" data-line-number="87" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> ((rc = <span class="pl-c1">dlerror</span>()) != <span class="pl-c1">NULL</span>) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R88" data-line-number="88" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-k">goto</span> cleanup;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R89" data-line-number="89" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R90" data-line-number="90" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    (*init)();</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R91" data-line-number="91" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">return</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R92" data-line-number="92" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R93" data-line-number="93" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+cleanup:</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R94" data-line-number="94" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    cpu_boost = <span class="pl-c1">NULL</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R95" data-line-number="95" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> (dlhandle) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R96" data-line-number="96" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-c1">dlclose</span>(dlhandle);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R97" data-line-number="97" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        dlhandle = <span class="pl-c1">NULL</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R98" data-line-number="98" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R99" data-line-number="99" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+}</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R100" data-line-number="100" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R101" data-line-number="101" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">static</span> <span class="pl-k">void</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R102" data-line-number="102" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-en">org_codeaurora_performance_native_deinit</span>(JNIEnv *env, jobject clazz)</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R103" data-line-number="103" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+{</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R104" data-line-number="104" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c1">void</span> (*deinit)(<span class="pl-k">void</span>);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R105" data-line-number="105" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R106" data-line-number="106" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> (dlhandle) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R107" data-line-number="107" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        cpu_boost = <span class="pl-c1">NULL</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R108" data-line-number="108" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R109" data-line-number="109" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        *(<span class="pl-k">void</span> **) (&amp;deinit) = <span class="pl-c1">dlsym</span>(dlhandle, <span class="pl-s"><span class="pl-pds">"</span>libqc_opt_deinit<span class="pl-pds">"</span></span>);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R110" data-line-number="110" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-k">if</span> (deinit) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R111" data-line-number="111" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+            (*deinit)();</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R112" data-line-number="112" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R113" data-line-number="113" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R114" data-line-number="114" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        <span class="pl-c1">dlclose</span>(dlhandle);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R115" data-line-number="115" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        dlhandle       = <span class="pl-c1">NULL</span>;</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R116" data-line-number="116" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R117" data-line-number="117" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+}</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R118" data-line-number="118" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R119" data-line-number="119" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">static</span> <span class="pl-k">void</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R120" data-line-number="120" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-en">org_codeaurora_performance_native_cpu_boost</span>(JNIEnv *env, jobject clazz, jint ntasks)</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R121" data-line-number="121" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+{</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R122" data-line-number="122" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">if</span> (cpu_boost) {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R123" data-line-number="123" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+        (*cpu_boost)(ntasks);</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R124" data-line-number="124" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    }</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R125" data-line-number="125" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+}</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R126" data-line-number="126" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R127" data-line-number="127" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-c">// ----------------------------------------------------------------------------</span></span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R128" data-line-number="128" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R129" data-line-number="129" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">static</span> JNINativeMethod <span class="pl-smi">gMethods</span>[] = {</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R130" data-line-number="130" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    {<span class="pl-s"><span class="pl-pds">"</span>native_cpu_boost<span class="pl-pds">"</span></span>,      <span class="pl-s"><span class="pl-pds">"</span>(I)V<span class="pl-pds">"</span></span>,                  (<span class="pl-k">void</span> *)org_codeaurora_performance_native_cpu_boost},</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R131" data-line-number="131" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    {<span class="pl-s"><span class="pl-pds">"</span>native_deinit<span class="pl-pds">"</span></span>,         <span class="pl-s"><span class="pl-pds">"</span>()V<span class="pl-pds">"</span></span>,                   (<span class="pl-k">void</span> *)org_codeaurora_performance_native_deinit},</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R132" data-line-number="132" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+};</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R133" data-line-number="133" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R134" data-line-number="134" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R135" data-line-number="135" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+<span class="pl-k">int</span> <span class="pl-en">register_org_codeaurora_Performance</span>(JNIEnv *env)</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R136" data-line-number="136" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+{</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R137" data-line-number="137" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-c1">org_codeaurora_performance_native_init</span>();</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R138" data-line-number="138" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R139" data-line-number="139" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+    <span class="pl-k">return</span> <span class="pl-c1">AndroidRuntime::registerNativeMethods</span>(env,</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R140" data-line-number="140" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+            <span class="pl-s"><span class="pl-pds">"</span>org/codeaurora/Performance<span class="pl-pds">"</span></span>, <span class="pl-smi">gMethods</span>, <span class="pl-c1">NELEM</span>(<span class="pl-smi">gMethods</span>));</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R141" data-line-number="141" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+}</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R142" data-line-number="142" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+</span>
+
+  </td>
+</tr>
+
+
+    <tr>
+    <td class="blob-num blob-num-addition empty-cell"></td>
+
+    <td id="diff-5197ddf021b1687ac1f61d8ad05c22f2R143" data-line-number="143" class="blob-num blob-num-addition js-linkable-line-number"></td>
+
+  <td class="blob-code blob-code-addition">
+
+    <span class="blob-code-inner">+}   <span class="pl-c">// namespace android</span></span>
+
+  </td>
+</tr>
+
+
+
+              </tbody></table>
+            </div>
+      </div>
+</div>
+
+<button class="js-toggle-all-file-notes" data-hotkey="i" style="display:none">Toggle all file notes</button>
+
+
+<div id="all_commit_comments" class="js-quote-selection-container">
+  <div class="commit-comments-heading">
+    
+
+  </div>
+
+  
+<div id="comments" class="only-commit-comments comment-holder">
+</div>
+
+<!-- Rendered timeline since 2012-03-23 14:45:42 -->
+<div id="partial-timeline-marker" class="js-timeline-marker js-socket-channel js-updatable-content" data-channel="cjluo/frameworks_base:commit:4849e25131ae6fdaa6ac1129f7109791eb3f8174" data-url="/cjluo/frameworks_base/commit/4849e25131ae6fdaa6ac1129f7109791eb3f8174/show_partial?partial=timeline_marker&amp;since=1332539142" data-last-modified="Fri, 23 Mar 2012 21:45:42 GMT">
+</div>
+
+
+  
+
+    Please <a href="https://github.com/login?return_to=%2Fcjluo%2Fframeworks_base%2Fcommit%2F4849e25131ae6fdaa6ac1129f7109791eb3f8174" rel="nofollow">sign in</a> to comment.
+
+</div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2015 <span title="0.15670s from github-fe134-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/frameworks-2c8ae50712a47d2b83d740cb875d55cdbbb3fdbccf303951cc.js"></script>
+      <script async="async" crossorigin="anonymous" src="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/github-fe1102a627c0f0eb4c8ccd94ee4ecb4ea91eb19e1ea462b1d6fe04.js"></script>
+      
+      
+
+
+  
+
+
+<div style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;" class="global-zeroclipboard-container" id="global-zeroclipboard-html-bridge"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" type="application/x-shockwave-flash" data="performance:%20Add%20Performance%20class%20%C2%B7%20cjluo_frameworks_base@4849e25%20%C2%B7%20GitHub_files/ZeroClipboard.swf" height="100%" width="100%"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=github.com%2C%2F%2Fgithub.com%2Chttps%3A%2F%2Fgithub.com&amp;swfObjectId=global-zeroclipboard-flash-bridge"></object></div></body></html>
